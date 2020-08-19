@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Szerencsefaktor.Other_classes;
 
-namespace CreateDataTables
+namespace Szerencsefaktor.ForDatabase
 {
     class CreatingDatatables
     {
@@ -39,9 +39,9 @@ namespace CreateDataTables
         internal KindOfGame Game { get => game; set => game = value; }
         internal SkandiDraws Draws { get => draws; set => draws = value; }
         public string TableString { get => tableString; private set => tableString = value; }
-        public string DrawTimeTableString { get => drawTimeTableString;  private set => drawTimeTableString = value; }
+        public string DrawTimeTableString { get => drawTimeTableString; private set => drawTimeTableString = value; }
         public string PrizeTableString { get => prizeTableString; private set => prizeTableString = value; }
-        public string DrawNumbersTableString { get => drawNumbersTableString;  private set => drawNumbersTableString = value; }
+        public string DrawNumbersTableString { get => drawNumbersTableString; private set => drawNumbersTableString = value; }
         public int NumberFrom { get => numberFrom; private set => numberFrom = value; }
         public int NumberTo { get => numberTo; private set => numberTo = value; }
         public int NumberPiece { get => numberPiece; private set => numberPiece = value; }
@@ -57,11 +57,11 @@ namespace CreateDataTables
         public List<string> DerivedTableNames { get => derivedTableNames; set => derivedTableNames = value; }
         public List<string> DerivedTableNamesString { get => derivedTableNamesString; set => derivedTableNamesString = value; }
 
-        public CreatingDatatables(KindOfGame game, SkandiDraws draws=SkandiDraws.MachineDraws)
-        {            
+        public CreatingDatatables(KindOfGame game, SkandiDraws draws = SkandiDraws.MachineDraws)
+        {
             Game = game;
             Draws = draws;
-            drawTimeTableString= "";
+            drawTimeTableString = "";
             prizeTableString = "";
             drawNumbersTableString = "";
             derivedTableNamesString = new List<string>();
@@ -100,24 +100,24 @@ namespace CreateDataTables
 
         public void BaseTableCodeGeneration()
         {
-          
+
             //string secondString = "tablaName"            
             string lastString = ", CONSTRAINT HuzasokIdeje_Nyeremenyek_FK FOREIGN KEY (id) REFERENCES huzasokideje(id))";
-           
+
             //húzások ideje tábla szerkezetének létrehozása
             drawTimeTableString = createTable + "huzasokideje (" + idCreate + ", ev INT NOT NULL, het TINYINT NOT NULL ";
-            if (gameName =="Kenó")
+            if (gameName == "Kenó")
             {
                 drawTimeTableString += ", huzasnapja TINYINT NOT NULL";
             }
             drawTimeTableString += ", huzasdatuma DATE NOT NULL)";
-            
+
             //nyereménytábla létrehozása
             //Kenóban nincs nyereménytábla
             if (gameName != "Kenó")
             {
                 prizeTableString = createTable + "nyeremények (" + idCreate;
-                for (int i = numberFrom; i >=numberTo ; i--)
+                for (int i = numberFrom; i >= numberTo; i--)
                 {
                     prizeTableString += ", talalt" + (i).ToString() + "db INT, talalat" + (i).ToString() + "Ft FLOAT";
                 }
@@ -133,7 +133,7 @@ namespace CreateDataTables
             drawNumbersTableString += lastString;
 
             //szadatok tábla létrehozása
-            string numbers="";
+            string numbers = "";
             for (int i = 1; i <= maxNumber; i++)
             {
                 numbers += " szam" + i.ToString() + " INT";
@@ -149,11 +149,11 @@ namespace CreateDataTables
         }
         public void DerivedDataTablesGeneration() //származtatott adattáblák
         {
-            
+
             foreach (string item in derivedTableNames)
             {
                 string oneTableString = "";
-                oneTableString += createTable + " " + item + "("+idCreate;
+                oneTableString += createTable + " " + item + "(" + idCreate;
                 for (int i = 1; i <= maxNumber; i++)
                 {
                     oneTableString += ", szam" + i.ToString() + " FLOAT,";
@@ -171,7 +171,7 @@ namespace CreateDataTables
                 "kombSzamokDb TINYINT, " +
                 "alapJatekokDb INT NOT NULL)";
 
-            for (int i = numberFrom; i >=numberTo ; i--)
+            for (int i = numberFrom; i >= numberTo; i--)
             {
                 fromToNumber += "talalat" + i.ToString() + "Db INT";
                 if (i != numberTo)
@@ -181,20 +181,20 @@ namespace CreateDataTables
                 else
                 {
                     fromToNumber += ")";
-                }                
+                }
             }
             BaseIndexTalalatiTablaString = createTable + tableString + "talalatiIndex (" +
                 "indexSzam VARCHAR(3) NOT NULL, " +
                 "fixSzamok TINYINT, " +
                 "kombSzamok TINYINT, " +
-                fromToNumber+ ")";
+                fromToNumber + ")";
         }
         public void KenoIndexTableGeneration()
         {
             //megjatszottIndex 
             //indexSzam pk, jetekTipus, jelolesekSzama, szammezokSzama, alapjatekokSzama ha a tet 1* 2* 3* 4* 5*
             //indexSzam, jetekTipus, jelolesekSzama, szammezokSzama, alapJetekDb1xTet, alapjatekDb2xTet, stb
-            KenoMegjatszottIndexTablaString = createTable+"megjatszottIndex (" +
+            KenoMegjatszottIndexTablaString = createTable + "megjatszottIndex (" +
                 "indexSzam INT NOT NULL, " +
                 "jetekTipus VARCHAR(2), " +
                 "jelolesekSzama TINYINT NOT NULL, " +
@@ -207,8 +207,8 @@ namespace CreateDataTables
             //talaltiIndex
             //indexSzam, jeleolesekSzama, szammezokSzama, talalatokSzama, 
 
-            KenoNyeremenySzorzoTablaString = createTable+"nyeremenySzorzo (" +
-                idCreate +", "+
+            KenoNyeremenySzorzoTablaString = createTable + "nyeremenySzorzo (" +
+                idCreate + ", " +
                 "indexSzam INT NOT NULL, " +
                 "talaltokSzama TINYINT NOT NULL, " +
                 "nyeremenySzorzoHa1xTet INT NOT NULL, " +
@@ -219,7 +219,7 @@ namespace CreateDataTables
                 "CONSTRAINT FOREIGN KEY(indexSzam) REFERENCES megjatszottIndex(indexSzam))";
             /*
              */
-            KenoNyertesMezoSzorzoTablaString = createTable+"nyertesMezoSzorzo (" +
+            KenoNyertesMezoSzorzoTablaString = createTable + "nyertesMezoSzorzo (" +
                 idCreate + ", " +
                 "jatekTipus VARCHAR(2), " +
                 "nyertesMezoSzorzo10 VARCHAR(10), " +
@@ -248,8 +248,7 @@ namespace CreateDataTables
                 "nyertesSzammezokSzama03 INT, " +
                 "nyertesSzammezokSzama02 INT, " +
                 "nyertesSzammezokSzama01 INT, " +
-                "nyertesSzammezokSzama00 INT) " ;                
+                "nyertesSzammezokSzama00 INT) ";
         }
     }
-    
 }

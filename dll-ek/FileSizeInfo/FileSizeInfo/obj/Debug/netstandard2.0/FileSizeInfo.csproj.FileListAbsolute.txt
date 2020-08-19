@@ -1,0 +1,9 @@
+C:\Users\User\source\SzerencseFaktor\dll-ek\FileSizeInfo\FileSizeInfo\bin\Debug\netstandard2.0\FileSizeInfo.deps.json
+C:\Users\User\source\SzerencseFaktor\dll-ek\FileSizeInfo\FileSizeInfo\bin\Debug\netstandard2.0\FileSizeInfo.dll
+C:\Users\User\source\SzerencseFaktor\dll-ek\FileSizeInfo\FileSizeInfo\bin\Debug\netstandard2.0\FileSizeInfo.pdb
+C:\Users\User\source\SzerencseFaktor\dll-ek\FileSizeInfo\FileSizeInfo\obj\Debug\netstandard2.0\FileSizeInfo.csprojAssemblyReference.cache
+C:\Users\User\source\SzerencseFaktor\dll-ek\FileSizeInfo\FileSizeInfo\obj\Debug\netstandard2.0\FileSizeInfo.AssemblyInfoInputs.cache
+C:\Users\User\source\SzerencseFaktor\dll-ek\FileSizeInfo\FileSizeInfo\obj\Debug\netstandard2.0\FileSizeInfo.AssemblyInfo.cs
+C:\Users\User\source\SzerencseFaktor\dll-ek\FileSizeInfo\FileSizeInfo\obj\Debug\netstandard2.0\FileSizeInfo.csproj.CoreCompileInputs.cache
+C:\Users\User\source\SzerencseFaktor\dll-ek\FileSizeInfo\FileSizeInfo\obj\Debug\netstandard2.0\FileSizeInfo.dll
+C:\Users\User\source\SzerencseFaktor\dll-ek\FileSizeInfo\FileSizeInfo\obj\Debug\netstandard2.0\FileSizeInfo.pdb

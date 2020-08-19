@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "hprYJueiVbI64/R0oCk9EruUBSdraF9wHo5N7yqn/kNJ2rUthKq0NUlxNNu5hznpIj9iyxUim6HoGFboDWY1yA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\User\\source\\SzerencseFaktor\\dll-ek\\JsonFileManagement\\JsonFileManagement\\JsonFileManagement.csproj",
+  "expectedPackageFiles": [
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

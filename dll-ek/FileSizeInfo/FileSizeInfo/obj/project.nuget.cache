@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "1tjotkKdt2I1xvkDby3qP1FgoZGRMx+we6uV3wDsoSr6SRs236ltkER5UK3WPdEGgahdSsCHVLgz21NmOFUqBA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\User\\source\\SzerencseFaktor\\dll-ek\\FileSizeInfo\\FileSizeInfo\\FileSizeInfo.csproj",
+  "expectedPackageFiles": [
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

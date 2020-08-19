@@ -1,0 +1,9 @@
+C:\Users\User\source\SzerencseFaktor\dll-ek\DownloadingFileFromWeb\DownloadingFileFromWeb\bin\Debug\netstandard2.0\DownloadingFileFromWeb.deps.json
+C:\Users\User\source\SzerencseFaktor\dll-ek\DownloadingFileFromWeb\DownloadingFileFromWeb\bin\Debug\netstandard2.0\DownloadingFileFromWeb.dll
+C:\Users\User\source\SzerencseFaktor\dll-ek\DownloadingFileFromWeb\DownloadingFileFromWeb\bin\Debug\netstandard2.0\DownloadingFileFromWeb.pdb
+C:\Users\User\source\SzerencseFaktor\dll-ek\DownloadingFileFromWeb\DownloadingFileFromWeb\obj\Debug\netstandard2.0\DownloadingFileFromWeb.csprojAssemblyReference.cache
+C:\Users\User\source\SzerencseFaktor\dll-ek\DownloadingFileFromWeb\DownloadingFileFromWeb\obj\Debug\netstandard2.0\DownloadingFileFromWeb.AssemblyInfoInputs.cache
+C:\Users\User\source\SzerencseFaktor\dll-ek\DownloadingFileFromWeb\DownloadingFileFromWeb\obj\Debug\netstandard2.0\DownloadingFileFromWeb.AssemblyInfo.cs
+C:\Users\User\source\SzerencseFaktor\dll-ek\DownloadingFileFromWeb\DownloadingFileFromWeb\obj\Debug\netstandard2.0\DownloadingFileFromWeb.csproj.CoreCompileInputs.cache
+C:\Users\User\source\SzerencseFaktor\dll-ek\DownloadingFileFromWeb\DownloadingFileFromWeb\obj\Debug\netstandard2.0\DownloadingFileFromWeb.dll
+C:\Users\User\source\SzerencseFaktor\dll-ek\DownloadingFileFromWeb\DownloadingFileFromWeb\obj\Debug\netstandard2.0\DownloadingFileFromWeb.pdb

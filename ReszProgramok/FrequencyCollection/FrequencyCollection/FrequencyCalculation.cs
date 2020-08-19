@@ -6,37 +6,51 @@ namespace FrequencyCollection
 {
     public class FrequencyCalculation
     {
+        /*
+         Ez az osztály arra szolgál, hogy visszaadja az alábiakat:
+        1) hányszor húzták egymás után az adott számot -> ennek gyakoriságát,
+        2) hányszor nem húzták egymás után az adott számot -> ennek gyakoriságát
+        3) az egyes gyakorisági listák elemeinek az összes úzáshoz viszonyított arányát.
+            Ennek leényege, hogy mekkora %-ban húzzák vagy nem húzzák az adott számot.
+         
+         */
         private List<int> zeroFrequencyList;
         private List<int> nonZeroFrequencyList;
         private List<int> baseDataList;
-        private int largestElement;
-        private int sumOfElements;
-
+        private List<float> zeroRateList;
+        private List<float> nonZeroRateList;
+        private int sumOfZeroElements;
+        private int sumOfNonZeroElements;
+        private bool fromIndexZeroOrOne;
+        //private bool zeroOrNonZeroList;
         public FrequencyCalculation()
         {
             baseDataList = new List<int>();
             zeroFrequencyList = new List<int>();
             nonZeroFrequencyList = new List<int>();
-            largestElement = 0;
-            sumOfElements = 0;
+            zeroRateList = new List<float>();
+            nonZeroRateList = new List<float>();
+            sumOfZeroElements = 0;
+            sumOfNonZeroElements = 0;
         }
         public void SetBaseDataList(List<int> baseData)
         {
             baseDataList = baseData;
         } 
-        public int GetLargestElement()
+        public void SetZeroIndexOrNonZeroIndex(bool fromIndexZeroOrOne = false)
         {
-            int largestNumber = 0;
-
-            foreach (int item in baseDataList)
-            {
-                if (largestNumber < item)
-                {
-                    largestNumber = item;
-                }
-            }
-            return largestNumber;
+            //fromIndexZeroOrOne
+            //true - from the zero index element
+            //false - from the one index element
+            this.fromIndexZeroOrOne = fromIndexZeroOrOne;
         }
+        /*public void SetZeroOrNonZeroListCalculation(bool zeroOrNonZeroList = false)
+        {
+            //zeroOrNonZeroList
+            //true - the sum of the items in the zero list
+            //false - the sum of the items in the non zero list
+            this.zeroOrNonZeroList = zeroOrNonZeroList;
+        }        */
         public void ZeroIncidenceFrequencyCalculation()
         {
             int previousValue = baseDataList.First();
@@ -102,16 +116,8 @@ namespace FrequencyCollection
                 previousValue = baseDataList[1];
             }
         }
-        public int GettheSumOfTheItemsInTheList(bool fromIndexZeroOrOne = false,  bool zeroOrNonZeroList=false)
+        private int FirstElementIndex()
         {
-            //fromIndexZeroOrOne
-            //true - from the zero index element
-            //false - from the one index element
-
-            //zeroOrNonZeroList
-            //true - the sum of the items in the zero list
-            //false - the sum of the items in the non zero list
-            
             int firstElementIndex;
 
             if (fromIndexZeroOrOne)
@@ -122,26 +128,80 @@ namespace FrequencyCollection
             {
                 firstElementIndex = 1;
             }
-
-            if (zeroOrNonZeroList)
-            {
-                for (int i = firstElementIndex; i < zeroFrequencyList.Count; i++)
-                {
-                    sumOfElements += zeroFrequencyList[i];
-                }
-            }
-            else
-            {
-                for (int i= firstElementIndex; i<nonZeroFrequencyList.Count;i++)
-                {
-                    sumOfElements += nonZeroFrequencyList[i];
-                }
-            }
-            return sumOfElements;
+            return firstElementIndex;
         }
+        public void SumOfTheItemsInTheZeroListCalculation()
+        {                                                         
+                for (int i = FirstElementIndex(); i < zeroFrequencyList.Count; i++)
+                {
+                    sumOfZeroElements += zeroFrequencyList[i];
+                }                    
+        }
+        public void SumOfTheItemsInTheNonZeroListCalculation()
+        {           
+                for (int i = FirstElementIndex(); i < nonZeroFrequencyList.Count; i++)
+                {
+                    sumOfNonZeroElements += nonZeroFrequencyList[i];
+                }           
+        }
+        public void ZeroRateListCalculation()
+        {
+            try
+            {
+                for (int i = 1; i < zeroFrequencyList.Count; i++)
+                {
+                    zeroRateList.Add(zeroFrequencyList[i]/sumOfZeroElements);
+                }
+            }
+            catch (Exception ex)
+            {
 
-        /*
-         HIÁNYZIK az arányosítás list!!
-         */
+                throw new ArgumentException("Hiányzik a lista elemek összege!\nFuttassa a 'SumOfTheItemsInTheZeroListCalculation' metódust!", ex);
+            }
+        }
+        public void NonZeroRateListCalculation()
+        {
+            try
+            {
+                for (int i = 1; i < nonZeroFrequencyList.Count; i++)
+                {
+                    nonZeroRateList.Add(nonZeroFrequencyList[i] / sumOfNonZeroElements);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new ArgumentException("Hiányzik a lista elemek összege!\nFuttassa a 'SumOfTheItemsInTheNonZeroListCalculation' metódust!", ex);
+            }
+        }
+        public int GetLargestElement()
+        {
+            int largestNumber = 0;
+
+            foreach (int item in baseDataList)
+            {
+                if (largestNumber < item)
+                {
+                    largestNumber = item;
+                }
+            }
+            return largestNumber;
+        }
+        public int GetSumOfZerotheItemsInTheList()
+        {
+            return sumOfZeroElements;
+        }
+        public int GetSumOfNonZerotheItemsInTheList()
+        {
+            return sumOfNonZeroElements;
+        }
+        public List<float> GetNonZeroRateList()
+        {
+            return nonZeroRateList;
+        }
+        public List<float> GetZeroRateList()
+        {
+            return zeroRateList;
+        }
     }
 }
