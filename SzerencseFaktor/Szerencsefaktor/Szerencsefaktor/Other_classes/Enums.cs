@@ -72,6 +72,13 @@ namespace Szerencsefaktor.Other_classes
         MeglévőTáblaBővítése
     }
 
+    enum Uzenetek
+    {
+        hiba,
+        informació,
+        figyelmeztetés,
+        kérdés
+    }
     class Enums
     {
     }
