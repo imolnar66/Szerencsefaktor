@@ -1,0 +1,9 @@
+C:\Users\User\source\SzerencseFaktor\dll-ek\EMACalculation\EMACalculation\bin\Debug\netstandard2.0\EMACalculation.deps.json
+C:\Users\User\source\SzerencseFaktor\dll-ek\EMACalculation\EMACalculation\bin\Debug\netstandard2.0\EMACalculation.dll
+C:\Users\User\source\SzerencseFaktor\dll-ek\EMACalculation\EMACalculation\bin\Debug\netstandard2.0\EMACalculation.pdb
+C:\Users\User\source\SzerencseFaktor\dll-ek\EMACalculation\EMACalculation\obj\Debug\netstandard2.0\EMACalculation.csprojAssemblyReference.cache
+C:\Users\User\source\SzerencseFaktor\dll-ek\EMACalculation\EMACalculation\obj\Debug\netstandard2.0\EMACalculation.AssemblyInfoInputs.cache
+C:\Users\User\source\SzerencseFaktor\dll-ek\EMACalculation\EMACalculation\obj\Debug\netstandard2.0\EMACalculation.AssemblyInfo.cs
+C:\Users\User\source\SzerencseFaktor\dll-ek\EMACalculation\EMACalculation\obj\Debug\netstandard2.0\EMACalculation.csproj.CoreCompileInputs.cache
+C:\Users\User\source\SzerencseFaktor\dll-ek\EMACalculation\EMACalculation\obj\Debug\netstandard2.0\EMACalculation.dll
+C:\Users\User\source\SzerencseFaktor\dll-ek\EMACalculation\EMACalculation\obj\Debug\netstandard2.0\EMACalculation.pdb
