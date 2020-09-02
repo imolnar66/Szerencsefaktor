@@ -1,0 +1,8 @@
+{
+"JatekNeve":"skandinavlotto";
+"HuzasokTablaNevek":["huzasokideje","nyeremenyek","huzottszamok"],
+"SzarmaztatottAdatokTablaNevek":["szadatok","rsiadatok","rezgesadatok","rezgestrendadatok","emarovidadatok","emahosszuadatok","trixadatok","rsitrendadatok","predikcio","pontozas","megjatszottindex","talalatiindex","abctablaadatok","trixsignaladatok"],
+"Rezgestrendhossza":25,
+"MentettAllomanyNeve":"archiv.csv",
+"Indikatorok":["ema","trix","rsi","","abc", "viszonyitasiszam"]
+}

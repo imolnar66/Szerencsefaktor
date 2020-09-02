@@ -1,0 +1,12 @@
+{
+"JatekNeve":"skandinavlotto",
+"MinSzam":1,
+"Maxszam":35,
+"HanyatHuznak":7,
+"HonosLap":"https://bet.szerencsejatek.hu/jatekok/skandinavlotto",
+"HonnanMit":"https://bet.szerencsejatek.hu/cmsfiles/skandi.csv",
+"HovaMit":"archiv.csv",
+"RezgesiYAllando":0.2,
+"RezgesiYAllandoOsztando":7,
+"RezgesiYAllandoOszto":35
+}

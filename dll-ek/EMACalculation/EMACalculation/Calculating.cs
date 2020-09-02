@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace EMACalculation
 {
-    delegate void EMACalculationIssue();
+    public delegate void EMACalculationIssue();
     public class Calculating
     {
         /*

@@ -1,0 +1,9 @@
+c:\Users\User\source\SzerencseFaktor\dll-ek\JasonFileManagement\JasonFileManagement\bin\Debug\netstandard2.0\JasonFileManagement.deps.json
+c:\Users\User\source\SzerencseFaktor\dll-ek\JasonFileManagement\JasonFileManagement\bin\Debug\netstandard2.0\JasonFileManagement.dll
+c:\Users\User\source\SzerencseFaktor\dll-ek\JasonFileManagement\JasonFileManagement\bin\Debug\netstandard2.0\JasonFileManagement.pdb
+c:\Users\User\source\SzerencseFaktor\dll-ek\JasonFileManagement\JasonFileManagement\obj\Debug\netstandard2.0\JasonFileManagement.csprojAssemblyReference.cache
+c:\Users\User\source\SzerencseFaktor\dll-ek\JasonFileManagement\JasonFileManagement\obj\Debug\netstandard2.0\JasonFileManagement.AssemblyInfoInputs.cache
+c:\Users\User\source\SzerencseFaktor\dll-ek\JasonFileManagement\JasonFileManagement\obj\Debug\netstandard2.0\JasonFileManagement.AssemblyInfo.cs
+c:\Users\User\source\SzerencseFaktor\dll-ek\JasonFileManagement\JasonFileManagement\obj\Debug\netstandard2.0\JasonFileManagement.csproj.CoreCompileInputs.cache
+c:\Users\User\source\SzerencseFaktor\dll-ek\JasonFileManagement\JasonFileManagement\obj\Debug\netstandard2.0\JasonFileManagement.dll
+c:\Users\User\source\SzerencseFaktor\dll-ek\JasonFileManagement\JasonFileManagement\obj\Debug\netstandard2.0\JasonFileManagement.pdb

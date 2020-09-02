@@ -1,0 +1,4 @@
+c:\Users\User\source\SzerencseFaktor\dll-ek\GyakorisagSzanolas\GyakorisagSzanolas\obj\Debug\GyakorisagSzamolas.csprojAssemblyReference.cache
+c:\Users\User\source\SzerencseFaktor\dll-ek\GyakorisagSzanolas\GyakorisagSzanolas\obj\Debug\GyakorisagSzamolas.csproj.CoreCompileInputs.cache
+c:\Users\User\source\SzerencseFaktor\dll-ek\GyakorisagSzanolas\GyakorisagSzanolas\obj\Debug\GyakorisagSzanolas.dll
+c:\Users\User\source\SzerencseFaktor\dll-ek\GyakorisagSzanolas\GyakorisagSzanolas\obj\Debug\GyakorisagSzanolas.pdb

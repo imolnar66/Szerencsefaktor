@@ -1,0 +1,6 @@
+C:\Users\István\source\repos\20190820_projekt\Skandi projekt\GyakorisagSzanolas\GyakorisagSzanolas\bin\Debug\GyakorisagSzanolas.dll
+C:\Users\István\source\repos\20190820_projekt\Skandi projekt\GyakorisagSzanolas\GyakorisagSzanolas\bin\Debug\GyakorisagSzanolas.pdb
+C:\Users\István\source\repos\20190820_projekt\Skandi projekt\GyakorisagSzanolas\GyakorisagSzanolas\obj\Debug\GyakorisagSzanolas.csprojAssemblyReference.cache
+C:\Users\István\source\repos\20190820_projekt\Skandi projekt\GyakorisagSzanolas\GyakorisagSzanolas\obj\Debug\GyakorisagSzanolas.csproj.CoreCompileInputs.cache
+C:\Users\István\source\repos\20190820_projekt\Skandi projekt\GyakorisagSzanolas\GyakorisagSzanolas\obj\Debug\GyakorisagSzanolas.dll
+C:\Users\István\source\repos\20190820_projekt\Skandi projekt\GyakorisagSzanolas\GyakorisagSzanolas\obj\Debug\GyakorisagSzanolas.pdb

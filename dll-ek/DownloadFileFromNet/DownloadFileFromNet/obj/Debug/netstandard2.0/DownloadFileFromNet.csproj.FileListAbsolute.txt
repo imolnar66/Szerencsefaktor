@@ -1,0 +1,9 @@
+c:\Users\User\source\SzerencseFaktor\dll-ek\DownloadFileFromNet\DownloadFileFromNet\bin\Debug\netstandard2.0\DownloadFileFromNet.deps.json
+c:\Users\User\source\SzerencseFaktor\dll-ek\DownloadFileFromNet\DownloadFileFromNet\bin\Debug\netstandard2.0\DownloadFileFromNet.dll
+c:\Users\User\source\SzerencseFaktor\dll-ek\DownloadFileFromNet\DownloadFileFromNet\bin\Debug\netstandard2.0\DownloadFileFromNet.pdb
+c:\Users\User\source\SzerencseFaktor\dll-ek\DownloadFileFromNet\DownloadFileFromNet\obj\Debug\netstandard2.0\DownloadFileFromNet.csprojAssemblyReference.cache
+c:\Users\User\source\SzerencseFaktor\dll-ek\DownloadFileFromNet\DownloadFileFromNet\obj\Debug\netstandard2.0\DownloadFileFromNet.AssemblyInfoInputs.cache
+c:\Users\User\source\SzerencseFaktor\dll-ek\DownloadFileFromNet\DownloadFileFromNet\obj\Debug\netstandard2.0\DownloadFileFromNet.AssemblyInfo.cs
+c:\Users\User\source\SzerencseFaktor\dll-ek\DownloadFileFromNet\DownloadFileFromNet\obj\Debug\netstandard2.0\DownloadFileFromNet.csproj.CoreCompileInputs.cache
+c:\Users\User\source\SzerencseFaktor\dll-ek\DownloadFileFromNet\DownloadFileFromNet\obj\Debug\netstandard2.0\DownloadFileFromNet.dll
+c:\Users\User\source\SzerencseFaktor\dll-ek\DownloadFileFromNet\DownloadFileFromNet\obj\Debug\netstandard2.0\DownloadFileFromNet.pdb

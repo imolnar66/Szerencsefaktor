@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Szerencsefaktor.Other_classes;
 
-namespace Szerencsefaktor.Other_classes
+namespace Szerencsefaktor //.Other_classes
 {
-    class KiIrBoxba
+     static class KiIrBoxba
     {
         public static DialogResult MitIrjonKi(string mitirjonki, Uzenetek miatipus)
         {

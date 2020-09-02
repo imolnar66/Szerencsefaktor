@@ -1,0 +1,6 @@
+C:\Users\István\source\repos\20190820_projekt\mukodoModellek\Kombiatorikai_modell\VarianciaMatrix\VarianciaMatrix\bin\Debug\VarianciaMatrix.dll
+C:\Users\István\source\repos\20190820_projekt\mukodoModellek\Kombiatorikai_modell\VarianciaMatrix\VarianciaMatrix\bin\Debug\VarianciaMatrix.pdb
+C:\Users\István\source\repos\20190820_projekt\mukodoModellek\Kombiatorikai_modell\VarianciaMatrix\VarianciaMatrix\obj\Debug\VarianciaMatrix.csproj.CoreCompileInputs.cache
+C:\Users\István\source\repos\20190820_projekt\mukodoModellek\Kombiatorikai_modell\VarianciaMatrix\VarianciaMatrix\obj\Debug\VarianciaMatrix.dll
+C:\Users\István\source\repos\20190820_projekt\mukodoModellek\Kombiatorikai_modell\VarianciaMatrix\VarianciaMatrix\obj\Debug\VarianciaMatrix.pdb
+c:\Users\István\source\repos\20190820_projekt\mukodoModellek\Kombiatorikai_modell\VarianciaMatrix\VarianciaMatrix\obj\Debug\VarianciaMatrix.csprojAssemblyReference.cache

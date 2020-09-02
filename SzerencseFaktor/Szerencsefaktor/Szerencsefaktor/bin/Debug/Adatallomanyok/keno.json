@@ -1,0 +1,12 @@
+{
+"JatekNeve":"keno",
+"MinSzam":1,
+"MaxSzam":80,
+"HanyatHuznak":7,
+"HonosLap":"https://bet.szerencsejatek.hu/jatekok/keno",
+"HonnanMit":"https://bet.szerencsejatek.hu/cmsfiles/keno.csv",
+"HovaMit":"archiv.csv",
+"RezgesiYAllando":0.0875,
+"RezgesiYAllandoOsztando":7,
+"RezgesiYAllandoOszto":80
+}

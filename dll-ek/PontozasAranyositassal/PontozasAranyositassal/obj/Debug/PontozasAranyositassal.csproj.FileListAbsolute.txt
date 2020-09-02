@@ -1,0 +1,10 @@
+C:\Users\István\source\repos\20190820_projekt\Pontozas\PontozasAranyositassal\PontozasAranyositassal\bin\Debug\PontozasAranyositassal.exe.config
+C:\Users\István\source\repos\20190820_projekt\Pontozas\PontozasAranyositassal\PontozasAranyositassal\bin\Debug\PontozasAranyositassal.exe
+C:\Users\István\source\repos\20190820_projekt\Pontozas\PontozasAranyositassal\PontozasAranyositassal\bin\Debug\PontozasAranyositassal.pdb
+C:\Users\István\source\repos\20190820_projekt\Pontozas\PontozasAranyositassal\PontozasAranyositassal\obj\Debug\PontozasAranyositassal.csprojAssemblyReference.cache
+C:\Users\István\source\repos\20190820_projekt\Pontozas\PontozasAranyositassal\PontozasAranyositassal\obj\Debug\PontozasAranyositassal.Form1.resources
+C:\Users\István\source\repos\20190820_projekt\Pontozas\PontozasAranyositassal\PontozasAranyositassal\obj\Debug\PontozasAranyositassal.Properties.Resources.resources
+C:\Users\István\source\repos\20190820_projekt\Pontozas\PontozasAranyositassal\PontozasAranyositassal\obj\Debug\PontozasAranyositassal.csproj.GenerateResource.cache
+C:\Users\István\source\repos\20190820_projekt\Pontozas\PontozasAranyositassal\PontozasAranyositassal\obj\Debug\PontozasAranyositassal.csproj.CoreCompileInputs.cache
+C:\Users\István\source\repos\20190820_projekt\Pontozas\PontozasAranyositassal\PontozasAranyositassal\obj\Debug\PontozasAranyositassal.exe
+C:\Users\István\source\repos\20190820_projekt\Pontozas\PontozasAranyositassal\PontozasAranyositassal\obj\Debug\PontozasAranyositassal.pdb

@@ -1,9 +1,0 @@
-C:\Users\User\source\SzerencseFaktor\dll-ek\JsonFileManagement\JsonFileManagement\bin\Debug\netstandard2.0\JsonFileManagement.deps.json
-C:\Users\User\source\SzerencseFaktor\dll-ek\JsonFileManagement\JsonFileManagement\bin\Debug\netstandard2.0\JsonFileManagement.dll
-C:\Users\User\source\SzerencseFaktor\dll-ek\JsonFileManagement\JsonFileManagement\bin\Debug\netstandard2.0\JsonFileManagement.pdb
-C:\Users\User\source\SzerencseFaktor\dll-ek\JsonFileManagement\JsonFileManagement\obj\Debug\netstandard2.0\JsonFileManagement.csprojAssemblyReference.cache
-C:\Users\User\source\SzerencseFaktor\dll-ek\JsonFileManagement\JsonFileManagement\obj\Debug\netstandard2.0\JsonFileManagement.AssemblyInfoInputs.cache
-C:\Users\User\source\SzerencseFaktor\dll-ek\JsonFileManagement\JsonFileManagement\obj\Debug\netstandard2.0\JsonFileManagement.AssemblyInfo.cs
-C:\Users\User\source\SzerencseFaktor\dll-ek\JsonFileManagement\JsonFileManagement\obj\Debug\netstandard2.0\JsonFileManagement.csproj.CoreCompileInputs.cache
-C:\Users\User\source\SzerencseFaktor\dll-ek\JsonFileManagement\JsonFileManagement\obj\Debug\netstandard2.0\JsonFileManagement.dll
-C:\Users\User\source\SzerencseFaktor\dll-ek\JsonFileManagement\JsonFileManagement\obj\Debug\netstandard2.0\JsonFileManagement.pdb

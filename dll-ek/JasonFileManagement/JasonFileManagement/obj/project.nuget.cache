@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "LdgBEiCu6wlEi4d3tyO27LGIVj3nEd6bJAcCvSOgZyvgXFQAijaiwZrZQu3Pum6GzHQt+hFiOJcRdAHIyR4fcg==",
+  "success": true,
+  "projectFilePath": "c:\\Users\\User\\source\\SzerencseFaktor\\dll-ek\\JasonFileManagement\\JasonFileManagement\\JasonFileManagement.csproj",
+  "expectedPackageFiles": [
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

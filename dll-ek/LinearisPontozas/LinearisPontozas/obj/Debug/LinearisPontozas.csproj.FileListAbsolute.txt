@@ -1,0 +1,6 @@
+C:\Users\István\source\repos\20190820_projekt\Pontozas\LinearisPontozas\LinearisPontozas\bin\Debug\LinearisPontozas.dll
+C:\Users\István\source\repos\20190820_projekt\Pontozas\LinearisPontozas\LinearisPontozas\bin\Debug\LinearisPontozas.pdb
+C:\Users\István\source\repos\20190820_projekt\Pontozas\LinearisPontozas\LinearisPontozas\obj\Debug\LinearisPontozas.csprojAssemblyReference.cache
+C:\Users\István\source\repos\20190820_projekt\Pontozas\LinearisPontozas\LinearisPontozas\obj\Debug\LinearisPontozas.csproj.CoreCompileInputs.cache
+C:\Users\István\source\repos\20190820_projekt\Pontozas\LinearisPontozas\LinearisPontozas\obj\Debug\LinearisPontozas.dll
+C:\Users\István\source\repos\20190820_projekt\Pontozas\LinearisPontozas\LinearisPontozas\obj\Debug\LinearisPontozas.pdb

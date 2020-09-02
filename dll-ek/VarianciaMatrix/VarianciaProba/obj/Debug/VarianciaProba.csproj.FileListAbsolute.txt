@@ -1,0 +1,13 @@
+C:\Users\István\source\repos\20190820_projekt\mukodoModellek\Kombiatorikai_modell\VarianciaMatrix\VarianciaProba\bin\Debug\VarianciaProba.exe.config
+C:\Users\István\source\repos\20190820_projekt\mukodoModellek\Kombiatorikai_modell\VarianciaMatrix\VarianciaProba\bin\Debug\VarianciaProba.exe
+C:\Users\István\source\repos\20190820_projekt\mukodoModellek\Kombiatorikai_modell\VarianciaMatrix\VarianciaProba\bin\Debug\VarianciaProba.pdb
+C:\Users\István\source\repos\20190820_projekt\mukodoModellek\Kombiatorikai_modell\VarianciaMatrix\VarianciaProba\bin\Debug\VarianciaMatrix.dll
+C:\Users\István\source\repos\20190820_projekt\mukodoModellek\Kombiatorikai_modell\VarianciaMatrix\VarianciaProba\bin\Debug\VarianciaMatrix.pdb
+C:\Users\István\source\repos\20190820_projekt\mukodoModellek\Kombiatorikai_modell\VarianciaMatrix\VarianciaProba\obj\Debug\VarianciaProba.csprojAssemblyReference.cache
+C:\Users\István\source\repos\20190820_projekt\mukodoModellek\Kombiatorikai_modell\VarianciaMatrix\VarianciaProba\obj\Debug\VarianciaProba.Properties.Resources.resources
+C:\Users\István\source\repos\20190820_projekt\mukodoModellek\Kombiatorikai_modell\VarianciaMatrix\VarianciaProba\obj\Debug\VarianciaProba.csproj.GenerateResource.cache
+C:\Users\István\source\repos\20190820_projekt\mukodoModellek\Kombiatorikai_modell\VarianciaMatrix\VarianciaProba\obj\Debug\VarianciaProba.csproj.CoreCompileInputs.cache
+C:\Users\István\source\repos\20190820_projekt\mukodoModellek\Kombiatorikai_modell\VarianciaMatrix\VarianciaProba\obj\Debug\VarianciaProba.csproj.CopyComplete
+C:\Users\István\source\repos\20190820_projekt\mukodoModellek\Kombiatorikai_modell\VarianciaMatrix\VarianciaProba\obj\Debug\VarianciaProba.exe
+C:\Users\István\source\repos\20190820_projekt\mukodoModellek\Kombiatorikai_modell\VarianciaMatrix\VarianciaProba\obj\Debug\VarianciaProba.pdb
+C:\Users\István\source\repos\20190820_projekt\mukodoModellek\Kombiatorikai_modell\VarianciaMatrix\VarianciaProba\obj\Debug\VarianciaProba.Form1.resources

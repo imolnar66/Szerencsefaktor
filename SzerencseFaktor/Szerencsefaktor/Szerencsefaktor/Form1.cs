@@ -11,12 +11,18 @@ using System.Configuration;
 using System.Data.SqlClient;
 using Szerencsefaktor.ForDatabase;
 using Szerencsefaktor.Other_classes;
+using DownloadFileFromNet;
 using Newtonsoft.Json;
+using System.Net.Http;
+using Szerencsefaktor.Other_classes;
+
+
 
 namespace Szerencsefaktor
 {
     public partial class Form1 : Form
     {
+        DownloadFileFromNetClass FileFromNet;
         public Form1()
         {
             InitializeComponent();
@@ -24,26 +30,40 @@ namespace Szerencsefaktor
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            if (!AbKezeloMSSQL.DoesTheTableExist("huzasokIdeje") && !AbKezeloMSSQL.DoesTheTableExist("szadatok"))
+            #region adattáblák ellenőrzése
+
+            if (!AbKezeloMSSQL.DoesTheTableExist("huzasokIdeje") && !AbKezeloMSSQL.DoesTheTableExist("szadatok")) //egyik sem létezik
             {
-                if (KiIrBoxba.MitIrjonKi("Az adattáblák nem léteznek!\nLétrehozzam azokat? ", Uzenetek.kérdés)==DialogResult.Yes)
+                if (KiIrBoxba.MitIrjonKi("Sem az alap, sem a származtatott adattáblák nem léteznek!\nLétrehozzam azokat? ", Uzenetek.kérdés) == DialogResult.Yes)
                 {
                     //JatekKivalasztasa dialog = new JatekKivalasztasa();
                     //dialog.Show;
                 }
-                else if (!AbKezeloMSSQL.DoesTheTableExist("huzasokideje") && AbKezeloMSSQL.DoesTheTableExist("szadatok"))
+                else if (AbKezeloMSSQL.DoesTheTableExist("huzasokideje") && !AbKezeloMSSQL.DoesTheTableExist("szadatok")) //csak a származtatott nem létezik
                 {
-                    if (KiIrBoxba.MitIrjonKi("A húzásokhoz kapcsolódó adattáblák nem léteznek!\nA származtatott adatokhoz kapcsolódó adattáblák léteznek!\nLétrehozzam azokat?", Uzenetek.kérdés)==DialogResult.Yes)
+                    if (KiIrBoxba.MitIrjonKi("Az alap adattáblák léteznek!\nA származtatott adattáblák nem léteznek!\nLétrehozzam azokat?", Uzenetek.kérdés) == DialogResult.Yes)
                     {
-                        KiIrBoxba.MitIrjonKi("A származtatott adatokhoz kapcsolódó táblákat törölni kell!\nTáblákat törlö, majd létrehozom az új üres táblákat\na húzásokhoz és a származtatott adatokhoz!", Uzenetek.informació);
+                        //származtatott adattáblák létrehozása
                     }
-
-                }
-                else if (true)
-                {
-                    
                 }
             }
+            #endregion
+
+            //if-hez mind az alap, mind a származtatott adattábla létezik
+
+            #region Hálózati kapcsolat ellenőrzése
+            try
+            {
+                
+            }
+            catch (HttpRequestException ex)
+            {
+
+                throw new ;
+                    //.MitIrjonKi($"Kapcsolódási hiba ! A hiba :{ex}",Uzenetek.hiba);
+            }
+            #endregion
+
         }
     }
 }
