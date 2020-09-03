@@ -14,7 +14,7 @@ using Szerencsefaktor.Other_classes;
 using DownloadFileFromNet;
 using Newtonsoft.Json;
 using System.Net.Http;
-using Szerencsefaktor.Other_classes;
+
 
 
 
@@ -58,9 +58,7 @@ namespace Szerencsefaktor
             }
             catch (HttpRequestException ex)
             {
-
-                throw new ;
-                    //.MitIrjonKi($"Kapcsolódási hiba ! A hiba :{ex}",Uzenetek.hiba);
+                KiIrBoxba.MitIrjonKi($"Adat lekérdezési hiba ! A HGiba üzenet :{ex}", Uzenetek.hiba);                   
             }
             #endregion
 

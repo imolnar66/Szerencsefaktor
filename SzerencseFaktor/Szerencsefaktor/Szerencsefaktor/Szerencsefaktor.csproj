@@ -77,6 +77,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigurationSettings.cs" />
     <Compile Include="ForDatabase\AbException.cs" />
     <Compile Include="ForDatabase\AbKezeloMSSQL.cs" />
     <Compile Include="ForDatabase\CreateDataTables.cs" />
@@ -86,14 +87,33 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ConfigurationSettingsFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConfigurationSettingsFrm.Designer.cs">
+      <DependentUpon>ConfigurationSettingsFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NewTableNameFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewTableNameFrm.Designer.cs">
+      <DependentUpon>NewTableNameFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Other_classes\Enums.cs" />
     <Compile Include="Other_classes\KiIrBoxba.cs" />
     <Compile Include="Other_classes\Log.cs" />
+    <Compile Include="Other_classes\OwnList.cs" />
     <Compile Include="Other_classes\Structures.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ConfigurationSettingsFrm.resx">
+      <DependentUpon>ConfigurationSettingsFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewTableNameFrm.resx">
+      <DependentUpon>NewTableNameFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

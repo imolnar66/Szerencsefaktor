@@ -1,0 +1,6 @@
+C:\Users\User\source\SzerencseFaktor\SzerencseFaktor\Szerencsefaktor\Szerencsefaktor\obj\Debug\Szerencsefaktor.csprojAssemblyReference.cache
+C:\Users\User\source\SzerencseFaktor\SzerencseFaktor\Szerencsefaktor\Szerencsefaktor\obj\Debug\Szerencsefaktor.Form1.resources
+C:\Users\User\source\SzerencseFaktor\SzerencseFaktor\Szerencsefaktor\Szerencsefaktor\obj\Debug\Szerencsefaktor.Forms.ConfigurationSettingsFrm.resources
+C:\Users\User\source\SzerencseFaktor\SzerencseFaktor\Szerencsefaktor\Szerencsefaktor\obj\Debug\Szerencsefaktor.Properties.Resources.resources
+C:\Users\User\source\SzerencseFaktor\SzerencseFaktor\Szerencsefaktor\Szerencsefaktor\obj\Debug\Szerencsefaktor.csproj.GenerateResource.cache
+C:\Users\User\source\SzerencseFaktor\SzerencseFaktor\Szerencsefaktor\Szerencsefaktor\obj\Debug\Szerencsefaktor.csproj.CoreCompileInputs.cache
