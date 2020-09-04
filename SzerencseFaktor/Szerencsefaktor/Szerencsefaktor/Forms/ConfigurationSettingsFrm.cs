@@ -9,13 +9,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Szerencsefaktor.Other_classes;
 using Szerencsefaktor.ForDatabase;
+using Szerencsefaktor.FajlKezeles;
+
 
 
 namespace Szerencsefaktor.Forms
 {
     public partial class ConfigurationSettingsFrm : Form
     {
+
         internal ConfigurationSettings ConfSettings { get; set; }
+        ConfigurationSettings ConfSett;
+        GameFeatures Game;
+        ReferenciaNumber RefNum;
+        ConfigurationSettings Conf;
+        TrixSettings Trix;
+        EmasSettings EmaS;
+        RsiSettings RsiS;
+        ABCLongSettings ABCS;
         bool focusLb1;
         bool focusLb2;
         int rowNumber;
@@ -24,6 +35,41 @@ namespace Szerencsefaktor.Forms
         public ConfigurationSettingsFrm()
         {
             InitializeComponent();
+            #region The basic settings load from json file
+            ConfSett = new ConfigurationSettings();
+            ConfSett.ReadFromJsonFile(JsonFileManagement.ReadFromJsonFile("beallitasok.json"));
+            #endregion          
+
+            #region This is section loading the game features
+            Game = new GameFeatures();
+            Game.ReadFromJsonFile(JsonFileManagement.ReadFromJsonFile(Conf.GameName + ".json"));
+            #endregion
+
+            #region This is section loading the reference number from json file
+            RefNum = new ReferenciaNumber();
+            RefNum.ReadFromJsonFile(JsonFileManagement.ReadFromJsonFile("viszonyitasiszam.json"));
+            #endregion
+
+            #region This is section loading the ABC length settings from Json file for trend determination 
+            ABCS = new ABCLongSettings();
+            ABCS.ReadFromJsonFile(JsonFileManagement.ReadFromJsonFile("abc.json"));
+            #endregion
+
+            #region This is section loading the RSI indicator settings from json file
+            RsiS = new RsiSettings();
+            RsiS.ReadFromJsonFile(JsonFileManagement.ReadFromJsonFile("rsi.json"));
+            #endregion
+
+            #region This is module loading the Trix indicator datas from Json file
+            Trix = new TrixSettings();
+            Trix.ReadFromJsonFile(JsonFileManagement.ReadFromJsonFile("trix.json"));
+            #endregion
+
+            #region This is modul loading the EMA settings from Json file
+            EmaS = new EmasSettings();
+            EmaS.ReadFromJsonFile(JsonFileManagement.ReadFromJsonFile("ema.json"));
+            #endregion
+
             rowNumber = -1;
             focusLb1 = false;
             focusLb2 = false;           
@@ -35,52 +81,39 @@ namespace Szerencsefaktor.Forms
 
         private void button13_Click(object sender, EventArgs e)
         {
-            //ConfSettings = new ConfigurationSettings();
-
-            //basic settings
-           // ConfSettings.GameName = textBox1.Text;
-            //ConfSettings.DrawingTablesNames = listBox1.DataSource;
-            //ConfSettings.DerivedTablesNames = listBox2.DataSource;
-            //ConfSettings.VibrationTrendLength = (int)numericUpDown1.Value;
-            //ConfSettings.IndicatorNames = listBox3.DataSource;
-
-            //game settings
-            /* nem módosítható értékek
-            ConfSettings.GameName = textBox1.Text;
-            ConfSettings.SmallestNumber= textBox2.Text;
-            ConfSettings.LargestNumber = textBox3.Text;
-            ConfSettings.HowManyCanIPlay = textBox4.Text;
-            ConfSettings.HomePage = textBox5.Text;
-            ConfSettings.FromWhat = textBox6.Text;
-            ConfSettings.WhereWhat = textBox7.Text;
-            ConfSettings.ConstantValueOfVibrationY = textBox8.Text;
-            ConfSettings.VibrationYConstantDivisibleBy = textBox9.Text;
-            ConfSettings.VibrationYConstantDivisor = textBox10.Text;
-
-            */
+            
             //EMA
-            ConfSettings.ShortEma =(int)numericUpDown2.Value;
-            ConfSettings.LongEma = (int)numericUpDown3.Value;
-
+            EmaS.ShortEma =(int)numericUpDown2.Value;
+            EmaS.LongEma = (int)numericUpDown3.Value;
+            
+            
             //trix
-            ConfSettings.TrixSLength = (int)numericUpDown4.Value;
-            ConfSettings.TrixLLength = (int)numericUpDown5.Value;
-
+            Trix.TrixSLength = (int)numericUpDown4.Value;
+            Trix.TrixLLength = (int)numericUpDown5.Value;
+          
+            
             //RSI
-            ConfSettings.RsiLength = (int)numericUpDown6.Value;
-            ConfSettings.RsiTrendLength = (int)numericUpDown7.Value;
-            //ConfSettings.RsiLevels = listBox4.DataSource;
+            RsiS.RsiLength = (int)numericUpDown6.Value;
+            RsiS.RsiTrendLength = (int)numericUpDown7.Value;
+                   
 
             //viszonyítási szám
-            ConfSettings.MinusNLength = (int)numericUpDown9.Value;
-
+            RefNum.MinusNLength = (int)numericUpDown9.Value;
+           
             //ABC
-            ConfSettings.AbcLength = (int)numericUpDown10.Value;
+            ABCS.AbcLength = (int)numericUpDown10.Value;
             if (tabControl1.Enabled)
             {
                 tabControl1.Enabled = false;
             }
-            
+            #region Data save to Json file                                   
+            JsonFileManagement.SaveToJsonFile("viszonyitasiszam.json", RefNum.SaveToJsonFile(RefNum.MinusNLength));
+            JsonFileManagement.SaveToJsonFile("trix.json",Trix.SaveToJsonFile(Trix));
+            JsonFileManagement.SaveToJsonFile("ema.json",EmaS.SaveToJsonFile(EmaS));
+            JsonFileManagement.SaveToJsonFile("rsi.json",RsiS.SaveToJsonFile(RsiS));
+            JsonFileManagement.SaveToJsonFile("abc.json",ABCS.SaveToJsonFile(ABCS));
+            JsonFileManagement.SaveToJsonFile("beallitasok.json",ConfSett.SaveToJsonFile(ConfSett));
+            #endregion
         }
 
         private void ConfigurationSettingsFrm_Load(object sender, EventArgs e)
@@ -96,35 +129,35 @@ namespace Szerencsefaktor.Forms
             listBox3.DataSource = ConfSettings.IndicatorNames;
 
             //game settings
-            textBox1.Text = ConfSettings.GameName;
-            textBox2.Text = ConfSettings.SmallestNumber.ToString();
-            textBox3.Text = ConfSettings.LargestNumber.ToString();
-            textBox4.Text = ConfSettings.HowManyCanIPlay.ToString();
-            textBox5.Text = ConfSettings.HomePage;
-            textBox6.Text = ConfSettings.FromWhat;
-            textBox7.Text = ConfSettings.WhereWhat;
-            textBox8.Text = ConfSettings.ConstantValueOfVibrationY.ToString();
-            textBox9.Text = ConfSettings.VibrationYConstantDivisibleBy.ToString();
-            textBox10.Text = ConfSettings.VibrationYConstantDivisor.ToString();
+            textBox1.Text = Game.GameName;
+            textBox2.Text = Game.SmallestNumber.ToString();
+            textBox3.Text = Game.LargestNumber.ToString();
+            textBox4.Text = Game.HowManyCanIPlay.ToString();
+            textBox5.Text = Game.HomePage;
+            textBox6.Text = Game.FromWhat;
+            textBox7.Text = Game.WhereWhat;
+            textBox8.Text = Game.ConstantValueOfVibrationY.ToString();
+            textBox9.Text = Game.VibrationYConstantDivisibleBy.ToString();
+            textBox10.Text = Game.VibrationYConstantDivisor.ToString();
 
             //EMA
-            numericUpDown2.Value = ConfSettings.ShortEma;
-            numericUpDown3.Value = ConfSettings.LongEma;
+            numericUpDown2.Value = EmaS.ShortEma;
+            numericUpDown3.Value = EmaS.LongEma;
 
             //trix
-            numericUpDown4.Value = ConfSettings.TrixSLength;
-            numericUpDown5.Value = ConfSettings.TrixLLength;
+            numericUpDown4.Value = Trix.TrixSLength;
+            numericUpDown5.Value = Trix.TrixLLength;
 
             //RSI
-            numericUpDown6.Value = ConfSettings.RsiLength;
-            numericUpDown7.Value = ConfSettings.RsiTrendLength;
-            listBox4.DataSource = ConfSettings.RsiLevels;
+            numericUpDown6.Value = RsiS.RsiLength;
+            numericUpDown7.Value = RsiS.RsiTrendLength;
+            listBox4.DataSource = RsiS.RsiLevels;
 
             //viszonyítási szám
-            numericUpDown9.Value = ConfSettings.MinusNLength;
+            numericUpDown9.Value = RefNum.MinusNLength;
 
             //ABC
-            numericUpDown10.Value = ConfSettings.AbcLength;
+            numericUpDown10.Value = ABCS.AbcLength;
         }
         #region RSI modifier      
         private void button9_Click(object sender, EventArgs e)
@@ -133,8 +166,8 @@ namespace Szerencsefaktor.Forms
             {
                 rowNumber = -1;
             }
-            ConfSettings.RsiLevels.Add((int)numericUpDown8.Value);
-            ConfSettings.RsiLevels.Sort();
+            RsiS.RsiLevels.Add((int)numericUpDown8.Value);
+            RsiS.RsiLevels.Sort();
             numericUpDown8.Value = 0;
             LbRefresh4();
         }
@@ -142,7 +175,7 @@ namespace Szerencsefaktor.Forms
         private void LbRefresh4()
         {
             listBox4.DataSource = null;
-            listBox4.DataSource = ConfSettings.RsiLevels;
+            listBox4.DataSource = RsiS.RsiLevels;
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -159,7 +192,7 @@ namespace Szerencsefaktor.Forms
         {
             if (numericUpDown8.Value == (int) listBox4.SelectedItem)
             {
-                ConfSettings.RsiLevels.RemoveAt(listBox4.SelectedIndex);
+                RsiS.RsiLevels.RemoveAt(listBox4.SelectedIndex);
                 LbRefresh4();
             }
         }
@@ -168,7 +201,7 @@ namespace Szerencsefaktor.Forms
         {
             if (listBox4.SelectedIndex != -1)
             {
-                ConfSettings.RsiLevels.RemoveAt(listBox4.SelectedIndex);
+                RsiS.RsiLevels.RemoveAt(listBox4.SelectedIndex);
                 LbRefresh4();
             }
         }
@@ -209,7 +242,7 @@ namespace Szerencsefaktor.Forms
                 }
                 else
                 {
-                    KiIrBoxba.MitIrjonKi("Kattintson arra a listbox-ra amelyiknek az adatait módosítani szeretné!", Uzenetek.informacio);
+                    KiIrBoxba.MitIrjonKi("Kattintson arra a listbox-ra amelyiknek az adatait módosítani szeretné!", Uzenetek.informació);
                 }
             }
         }

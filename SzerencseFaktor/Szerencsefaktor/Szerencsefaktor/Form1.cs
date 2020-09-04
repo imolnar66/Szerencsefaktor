@@ -14,18 +14,18 @@ using Szerencsefaktor.Other_classes;
 using DownloadFileFromNet;
 using Newtonsoft.Json;
 using System.Net.Http;
-
-
-
+using Szerencsefaktor.Forms;
 
 namespace Szerencsefaktor
 {
     public partial class Form1 : Form
     {
         DownloadFileFromNetClass FileFromNet;
+       
         public Form1()
         {
             InitializeComponent();
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -36,8 +36,11 @@ namespace Szerencsefaktor
             {
                 if (KiIrBoxba.MitIrjonKi("Sem az alap, sem a származtatott adattáblák nem léteznek!\nLétrehozzam azokat? ", Uzenetek.kérdés) == DialogResult.Yes)
                 {
-                    //JatekKivalasztasa dialog = new JatekKivalasztasa();
-                    //dialog.Show;
+                    SelectGameTheFirstStart FirstStart = new SelectGameTheFirstStart();
+                    if (FirstStart.ShowDialog() == DialogResult.OK)
+                    {
+                        //folytatás
+                    }
                 }
                 else if (AbKezeloMSSQL.DoesTheTableExist("huzasokideje") && !AbKezeloMSSQL.DoesTheTableExist("szadatok")) //csak a származtatott nem létezik
                 {

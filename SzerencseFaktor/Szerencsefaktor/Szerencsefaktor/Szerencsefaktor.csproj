@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConfigurationSettings.cs" />
+    <Compile Include="FajlKezeles\JsonFileManagement.cs" />
     <Compile Include="ForDatabase\AbException.cs" />
     <Compile Include="ForDatabase\AbKezeloMSSQL.cs" />
     <Compile Include="ForDatabase\CreateDataTables.cs" />
@@ -99,11 +100,23 @@
     <Compile Include="Forms\NewTableNameFrm.Designer.cs">
       <DependentUpon>NewTableNameFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SelectGameTheFirstStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SelectGameTheFirstStart.Designer.cs">
+      <DependentUpon>SelectGameTheFirstStart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Other_classes\ABCLongSettings.cs" />
+    <Compile Include="Other_classes\EmasSettings.cs" />
     <Compile Include="Other_classes\Enums.cs" />
+    <Compile Include="Other_classes\GameFeatures.cs" />
     <Compile Include="Other_classes\KiIrBoxba.cs" />
     <Compile Include="Other_classes\Log.cs" />
     <Compile Include="Other_classes\OwnList.cs" />
+    <Compile Include="Other_classes\ReferenciaNumber.cs" />
+    <Compile Include="Other_classes\RsiSettings.cs" />
     <Compile Include="Other_classes\Structures.cs" />
+    <Compile Include="Other_classes\TrixSettings.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -114,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewTableNameFrm.resx">
       <DependentUpon>NewTableNameFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelectGameTheFirstStart.resx">
+      <DependentUpon>SelectGameTheFirstStart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
