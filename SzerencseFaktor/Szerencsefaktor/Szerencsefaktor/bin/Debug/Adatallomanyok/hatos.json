@@ -1,12 +1,12 @@
 {
-"JatekNeve":"hatoslotto",
-"MinSzam":1,
-"MaxSzam":45,
-"HanyatHuznak":6,
-"HonosLap":"https://bet.szerencsejatek.hu/jatekok/hatoslotto",
-"HonnanMit":"https://bet.szerencsejatek.hu/cmsfiles/hatos.csv",
-"HovaMit":"archiv.csv",
-"RezgesiYAllando":0.13333,
-"RezgesiYAllandoOsztando":6,
-"RezgesiYAllandoOszto":45
+  "GameName": "hatoslotto",
+  "SmallestNumber": 1,
+  "LargestNumber": 45,
+  "HowManyCanIPlay": 6,
+  "HomePage": "https://bet.szerencsejatek.hu/jatekok/hatoslotto",
+  "FromWhat": "https://bet.szerencsejatek.hu/cmsfiles/hatos.csv",
+  "WhereWhat": "archiv.csv",
+  "ConstantValueOfVibrationY": 0.13333,
+  "VibrationYConstantDivisibleBy": 6,
+  "VibrationYConstantDivisor": 45
 }

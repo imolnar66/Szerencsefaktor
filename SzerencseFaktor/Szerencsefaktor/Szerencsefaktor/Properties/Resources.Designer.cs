@@ -63,6 +63,26 @@ namespace Szerencsefaktor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bosegszaru {
+            get {
+                object obj = ResourceManager.GetObject("bosegszaru", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bosegszaru1 {
+            get {
+                object obj = ResourceManager.GetObject("bosegszaru1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Hatter {
             get {
                 object obj = ResourceManager.GetObject("Hatter", resourceCulture);

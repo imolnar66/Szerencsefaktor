@@ -10,13 +10,12 @@ namespace Szerencsefaktor.FajlKezeles
     static public class JsonFileManagement
     {
 
-        public static string ReadFromJsonFile(string filePathAndName)
+        public static string ReadStringFromJsonFile(string filePathAndName)
         {
             string strResultJson = File.ReadAllText(filePathAndName);
             return strResultJson;
-
         }
-        public static void SaveToJsonFile(string filePathAndName, string jsonData)
+        public static void SaveStringToJsonFile(string filePathAndName, string jsonData)
         {
             File.WriteAllText(filePathAndName, jsonData);
         }

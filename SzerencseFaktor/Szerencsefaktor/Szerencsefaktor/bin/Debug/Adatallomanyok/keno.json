@@ -1,12 +1,12 @@
 {
-"JatekNeve":"keno",
-"MinSzam":1,
-"MaxSzam":80,
-"HanyatHuznak":7,
-"HonosLap":"https://bet.szerencsejatek.hu/jatekok/keno",
-"HonnanMit":"https://bet.szerencsejatek.hu/cmsfiles/keno.csv",
-"HovaMit":"archiv.csv",
-"RezgesiYAllando":0.0875,
-"RezgesiYAllandoOsztando":7,
-"RezgesiYAllandoOszto":80
+  "GameName": "keno",
+  "SmallestNumber": 1,
+  "LargestNumber": 80,
+  "HowManyCanIPlay": 10,
+  "HomePage": "https://bet.szerencsejatek.hu/jatekok/keno",
+  "FromWhat": "https://bet.szerencsejatek.hu/cmsfiles/keno.csv",
+  "WhereWhat": "archiv.csv",
+  "ConstantValueOfVibrationY": 0.0875,
+  "vibrationYConstantDivisibleBy": 7,
+  "vibrationYConstantDivisor": 80
 }

@@ -160,6 +160,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Hatter.jpg" />
+    <None Include="Resources\bosegszaru.jpg" />
+    <None Include="Resources\bosegszaru.png" />
     <Content Include="SzerencseFaktorMSSQL.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

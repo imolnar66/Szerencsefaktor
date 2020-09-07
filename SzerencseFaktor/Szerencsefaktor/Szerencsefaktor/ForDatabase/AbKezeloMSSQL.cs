@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Data;
 
 namespace Szerencsefaktor.ForDatabase
 {
@@ -16,7 +17,7 @@ namespace Szerencsefaktor.ForDatabase
         {
             try
             {
-                connection = new SqlConnection(ConfigurationManager.ConnectionStrings["SzerencseFaktor"].ConnectionString);
+                connection = new SqlConnection(ConfigurationManager.ConnectionStrings["SzerencseFaktorMSSQL"].ConnectionString);
                 connection.Open();
             }
             catch (Exception ex)

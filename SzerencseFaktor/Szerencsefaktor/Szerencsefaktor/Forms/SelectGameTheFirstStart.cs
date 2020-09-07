@@ -10,29 +10,35 @@ using System.Windows.Forms;
 using System.IO;
 using Szerencsefaktor.Other_classes;
 using Szerencsefaktor.FajlKezeles;
+using Newtonsoft.Json;
 
 namespace Szerencsefaktor.Forms
 {
     public partial class SelectGameTheFirstStart : Form
     {
+        string dataDirectory;
+
         GameFeatures SelectGame;
         public SelectGameTheFirstStart()
         {
             InitializeComponent();
+            dataDirectory = "./Adatallomanyok/";
             groupBox2.Enabled = false;
-            SelectGame = new GameFeatures();
+            
             FillComboboxWithData();
             LoadGameDataFromFile();
         }
         
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadGameDataFromFile();
+           
+            
+            FillGameDataToForm(LoadGameDataFromFile());
         }
         #region Other functions and methods
         public void FillComboboxWithData()
         {
-            string[] games = File.ReadAllText("games.csv").Split(';');
+            string[] games = File.ReadAllText(dataDirectory+"games.csv").Split(';');
             foreach (string item in games)
             {
                 comboBox1.Items.Add(item);
@@ -40,42 +46,50 @@ namespace Szerencsefaktor.Forms
             comboBox1.SelectedIndex = 0;
         }
 
-        public void LoadGameDataFromFile()
+        public GameFeatures LoadGameDataFromFile()
         {
             string fajlnev = string.Empty;
+            bool gepiKezi = false;
             switch (comboBox1.SelectedIndex)
             {
                 case 0:
-                    fajlnev = "otos.json";
+                    fajlnev = "otos";
                     break;
                 case 1:
-                    fajlnev = "hatos.json";
+                    fajlnev = "hatos";
                     break;
                 case 2:
-                    fajlnev = "skandi.json";
+                    fajlnev = "skandi";
+                    gepiKezi = true;
                     break;
                 case 3:
-                    fajlnev = "keno.json";
+                    fajlnev = "keno";
                     break;
             }
-            SelectGame.ReadFromJsonFile(JsonFileManagement.ReadFromJsonFile(fajlnev));
+            SelectGame = new GameFeatures();
+            groupBox1.Enabled = gepiKezi;
+            //string json = JsonFileManagement.ReadStringFromJsonFile("./Adatallomanyok/otos.json");
+            //SelectGame.ConvertJsonStringToJsonFormat(json);
+            //SelectGame.ConvertJsonStringToJsonFormat(JsonFileManagement.ReadFromJsonFile(dataDirectory+fajlnev));
+            //GameFeatures newGame = JsonConvert.DeserializeObject<GameFeatures>(File.ReadAllText("./Adatallomanyok/otos.json"));
+             SelectGame = JsonConvert.DeserializeObject<GameFeatures>(File.ReadAllText(dataDirectory + fajlnev+".json"));
+            //SelectGame.ConvertJsonStringToJsonFormat(File.ReadAllText(dataDirectory + fajlnev));
+            return SelectGame;
         }
 
-        public void FillGameDataToForm()
+        public void FillGameDataToForm(GameFeatures game)
         {
-            textBox2.Text = SelectGame.HomePage;
-            textBox3.Text = SelectGame.FromWhat;
-            textBox4.Text = SelectGame.WhereWhat;
+            textBox2.Text = game.HomePage;
+            textBox3.Text = game.FromWhat;
+            textBox4.Text = game.WhereWhat;
             //textBox5.Text = ;
             //textBox6.Text = ;
-            textBox1.Text = SelectGame.SmallestNumber.ToString();
-            textBox7.Text = SelectGame.LargestNumber.ToString();
-            textBox8.Text = SelectGame.HowManyCanIPlay.ToString();
-            textBox9.Text = SelectGame.ConstantValueOfVibrationY.ToString(); //osztandó
-            textBox10.Text = SelectGame.VibrationYConstantDivisor.ToString(); //osztó
-            textBox11.Text = SelectGame.ConstantValueOfVibrationY.ToString();
-
-            
+            textBox1.Text = game.SmallestNumber.ToString();
+            textBox7.Text = game.LargestNumber.ToString();
+            textBox8.Text = game.HowManyCanIPlay.ToString();
+            textBox9.Text = game.ConstantValueOfVibrationY.ToString(); //osztandó
+            textBox10.Text = game.VibrationYConstantDivisor.ToString(); //osztó
+            textBox11.Text = game.ConstantValueOfVibrationY.ToString();            
         }
         #endregion
 

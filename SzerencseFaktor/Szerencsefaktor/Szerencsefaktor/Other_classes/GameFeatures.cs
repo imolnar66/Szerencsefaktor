@@ -8,8 +8,12 @@ using Newtonsoft.Json;
 
 namespace Szerencsefaktor.Other_classes
 {
-    class GameFeatures
+    public class GameFeatures
     {
+        #region MyRegion
+
+
+        /*
         private string gameName;
         private int smallestNumber;
         private int largestNumber;
@@ -33,7 +37,6 @@ namespace Szerencsefaktor.Other_classes
                 {
                     throw new ArgumentException("A 'gameName' változó értéke nem lehet üres karaktersorozat!");
                 }
-
             }
         }
         public int SmallestNumber
@@ -49,7 +52,6 @@ namespace Szerencsefaktor.Other_classes
                 {
                     throw new ArgumentException("A 'smallestNumber' változó értéke nem lehet nulla!");
                 }
-
             }
         }
         public int LargestNumber
@@ -65,7 +67,6 @@ namespace Szerencsefaktor.Other_classes
                 {
                     throw new ArgumentException("A 'largestNumber' változó értéke nem lehet nulla!");
                 }
-
             }
         }
         public int HowManyCanIPlay
@@ -81,7 +82,6 @@ namespace Szerencsefaktor.Other_classes
                 {
                     throw new ArgumentException("A 'howManyCanIPlay' változó értéke nem lehet nulla!");
                 }
-
             }
         }
         public string HomePage
@@ -97,7 +97,6 @@ namespace Szerencsefaktor.Other_classes
                 {
                     throw new ArgumentException("A 'homePage' változó értéke nem lehet üres karaktersorozat!");
                 }
-
             }
         }
         public string FromWhat
@@ -113,7 +112,6 @@ namespace Szerencsefaktor.Other_classes
                 {
                     throw new ArgumentException("A 'fromWhat' változó értéke nem lehet üres karaktersorozat!");
                 }
-
             }
         }
         public string WhereWhat
@@ -129,7 +127,6 @@ namespace Szerencsefaktor.Other_classes
                 {
                     throw new ArgumentException("A 'whereWhat' változó értéke nem leht üres karaktersorozat!");
                 }
-
             }
         }
         public double ConstantValueOfVibrationY
@@ -145,7 +142,6 @@ namespace Szerencsefaktor.Other_classes
                 {
                     throw new ArgumentException("A 'constantValueOfVibrationY' változó értéke nem leht nulla !");
                 }
-
             }
         }
         public int VibrationYConstantDivisibleBy
@@ -161,7 +157,6 @@ namespace Szerencsefaktor.Other_classes
                 {
                     throw new ArgumentException("A 'vibrationYConstantDivisibleBy' változó értéke nem lehet nulla!");
                 }
-
             }
         }
         public int VibrationYConstantDivisor
@@ -177,22 +172,50 @@ namespace Szerencsefaktor.Other_classes
                 {
                     throw new ArgumentException("A 'vibrationYConstantDivisor' változó értéke nem lehet nulla!");
                 }
-
             }
-        }
-        public virtual void ReadFromJsonFile(string fromJson)
+        }*/
+        #endregion
+
+        private string gameName;
+        private int smallestNumber;
+        private int largestNumber;
+        private int howManyCanIPlay;
+        private string homePage;
+        private string fromWhat;
+        private string whereWhat;
+        private double constantValueOfVibrationY;
+        private int vibrationYConstantDivisibleBy;
+        private int vibrationYConstantDivisor;
+
+        public string GameName { get => gameName; set => gameName = value; }
+        public int SmallestNumber { get => smallestNumber; set => smallestNumber = value; }
+        public int LargestNumber { get => largestNumber; set => largestNumber = value; }
+        public int HowManyCanIPlay { get => howManyCanIPlay; set => howManyCanIPlay = value; }
+        public string HomePage { get => homePage; set => homePage = value; }
+        public string FromWhat { get => fromWhat; set => fromWhat = value; }
+        public string WhereWhat { get => whereWhat; set => whereWhat = value; }
+        public double ConstantValueOfVibrationY { get => constantValueOfVibrationY; set => constantValueOfVibrationY = value; }
+        public int VibrationYConstantDivisibleBy { get => vibrationYConstantDivisibleBy; set => vibrationYConstantDivisibleBy = value; }
+        public int VibrationYConstantDivisor { get => vibrationYConstantDivisor; set => vibrationYConstantDivisor = value; }
+        public virtual void ConvertJsonStringToJsonFormat(string fromJson)
         {
             GameFeatures conf = JsonConvert.DeserializeObject<GameFeatures>(fromJson);
-            GameName = conf.gameName;
-            SmallestNumber = conf.smallestNumber;
-            LargestNumber = conf.largestNumber;
-            HowManyCanIPlay = conf.howManyCanIPlay;
-            HomePage = conf.homePage;
-            FromWhat = conf.fromWhat;
-            WhereWhat = conf.whereWhat;
-            ConstantValueOfVibrationY = conf.constantValueOfVibrationY;
-            VibrationYConstantDivisibleBy = conf.vibrationYConstantDivisibleBy;
-            VibrationYConstantDivisor = conf.vibrationYConstantDivisor;            
+            GameName = conf.GameName;
+            SmallestNumber = conf.SmallestNumber;
+            LargestNumber = conf.LargestNumber;
+            HowManyCanIPlay = conf.HowManyCanIPlay;
+            HomePage = conf.HomePage;
+            FromWhat = conf.FromWhat;
+            WhereWhat = conf.WhereWhat;
+            ConstantValueOfVibrationY = conf.ConstantValueOfVibrationY;
+            VibrationYConstantDivisibleBy = conf.VibrationYConstantDivisibleBy;
+            VibrationYConstantDivisor = conf.VibrationYConstantDivisor;
+        }
+        public virtual string SaveStringFormatToJson(GameFeatures game)
+        {
+            return JsonConvert.SerializeObject(game, Formatting.Indented);
+
+
         }
     }
 }

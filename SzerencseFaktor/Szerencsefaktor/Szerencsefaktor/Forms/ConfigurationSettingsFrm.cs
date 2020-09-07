@@ -37,37 +37,37 @@ namespace Szerencsefaktor.Forms
             InitializeComponent();
             #region The basic settings load from json file
             ConfSett = new ConfigurationSettings();
-            ConfSett.ReadFromJsonFile(JsonFileManagement.ReadFromJsonFile("beallitasok.json"));
+            ConfSett.ReadFromJsonFile(JsonFileManagement.ReadStringFromJsonFile("beallitasok.json"));
             #endregion          
 
             #region This is section loading the game features
             Game = new GameFeatures();
-            Game.ReadFromJsonFile(JsonFileManagement.ReadFromJsonFile(Conf.GameName + ".json"));
+            Game.ConvertJsonStringToJsonFormat(JsonFileManagement.ReadStringFromJsonFile(Conf.GameName + ".json"));
             #endregion
 
             #region This is section loading the reference number from json file
             RefNum = new ReferenciaNumber();
-            RefNum.ReadFromJsonFile(JsonFileManagement.ReadFromJsonFile("viszonyitasiszam.json"));
+            RefNum.ReadFromJsonFile(JsonFileManagement.ReadStringFromJsonFile("viszonyitasiszam.json"));
             #endregion
 
             #region This is section loading the ABC length settings from Json file for trend determination 
             ABCS = new ABCLongSettings();
-            ABCS.ReadFromJsonFile(JsonFileManagement.ReadFromJsonFile("abc.json"));
+            ABCS.ReadFromJsonFile(JsonFileManagement.ReadStringFromJsonFile("abc.json"));
             #endregion
 
             #region This is section loading the RSI indicator settings from json file
             RsiS = new RsiSettings();
-            RsiS.ReadFromJsonFile(JsonFileManagement.ReadFromJsonFile("rsi.json"));
+            RsiS.ReadFromJsonFile(JsonFileManagement.ReadStringFromJsonFile("rsi.json"));
             #endregion
 
             #region This is module loading the Trix indicator datas from Json file
             Trix = new TrixSettings();
-            Trix.ReadFromJsonFile(JsonFileManagement.ReadFromJsonFile("trix.json"));
+            Trix.ReadFromJsonFile(JsonFileManagement.ReadStringFromJsonFile("trix.json"));
             #endregion
 
             #region This is modul loading the EMA settings from Json file
             EmaS = new EmasSettings();
-            EmaS.ReadFromJsonFile(JsonFileManagement.ReadFromJsonFile("ema.json"));
+            EmaS.ReadFromJsonFile(JsonFileManagement.ReadStringFromJsonFile("ema.json"));
             #endregion
 
             rowNumber = -1;
@@ -107,12 +107,12 @@ namespace Szerencsefaktor.Forms
                 tabControl1.Enabled = false;
             }
             #region Data save to Json file                                   
-            JsonFileManagement.SaveToJsonFile("viszonyitasiszam.json", RefNum.SaveToJsonFile(RefNum.MinusNLength));
-            JsonFileManagement.SaveToJsonFile("trix.json",Trix.SaveToJsonFile(Trix));
-            JsonFileManagement.SaveToJsonFile("ema.json",EmaS.SaveToJsonFile(EmaS));
-            JsonFileManagement.SaveToJsonFile("rsi.json",RsiS.SaveToJsonFile(RsiS));
-            JsonFileManagement.SaveToJsonFile("abc.json",ABCS.SaveToJsonFile(ABCS));
-            JsonFileManagement.SaveToJsonFile("beallitasok.json",ConfSett.SaveToJsonFile(ConfSett));
+            JsonFileManagement.SaveStringToJsonFile("viszonyitasiszam.json", RefNum.SaveToJsonFile(RefNum.MinusNLength));
+            JsonFileManagement.SaveStringToJsonFile("trix.json",Trix.SaveToJsonFile(Trix));
+            JsonFileManagement.SaveStringToJsonFile("ema.json",EmaS.SaveToJsonFile(EmaS));
+            JsonFileManagement.SaveStringToJsonFile("rsi.json",RsiS.SaveToJsonFile(RsiS));
+            JsonFileManagement.SaveStringToJsonFile("abc.json",ABCS.SaveToJsonFile(ABCS));
+            JsonFileManagement.SaveStringToJsonFile("beallitasok.json",ConfSett.SaveToJsonFile(ConfSett));
             #endregion
         }
 
