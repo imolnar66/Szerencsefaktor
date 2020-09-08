@@ -186,6 +186,8 @@ namespace Szerencsefaktor.Other_classes
         private double constantValueOfVibrationY;
         private int vibrationYConstantDivisibleBy;
         private int vibrationYConstantDivisor;
+        private string playableIndexFilePath;
+        private string hitIndexFilePath;
 
         public string GameName { get => gameName; set => gameName = value; }
         public int SmallestNumber { get => smallestNumber; set => smallestNumber = value; }
@@ -197,6 +199,8 @@ namespace Szerencsefaktor.Other_classes
         public double ConstantValueOfVibrationY { get => constantValueOfVibrationY; set => constantValueOfVibrationY = value; }
         public int VibrationYConstantDivisibleBy { get => vibrationYConstantDivisibleBy; set => vibrationYConstantDivisibleBy = value; }
         public int VibrationYConstantDivisor { get => vibrationYConstantDivisor; set => vibrationYConstantDivisor = value; }
+        public string PlayableIndexFilePath { get => playableIndexFilePath; set => playableIndexFilePath = value; }
+        public string HitIndexFilePath { get => hitIndexFilePath; set => hitIndexFilePath = value; }
         public virtual void ConvertJsonStringToJsonFormat(string fromJson)
         {
             GameFeatures conf = JsonConvert.DeserializeObject<GameFeatures>(fromJson);

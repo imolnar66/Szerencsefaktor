@@ -188,6 +188,7 @@
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(97, 20);
             this.textBox11.TabIndex = 12;
+            this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox10
             // 
@@ -195,6 +196,7 @@
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(97, 20);
             this.textBox10.TabIndex = 11;
+            this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox9
             // 
@@ -202,6 +204,7 @@
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(97, 20);
             this.textBox9.TabIndex = 10;
+            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox8
             // 
@@ -209,6 +212,7 @@
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(97, 20);
             this.textBox8.TabIndex = 9;
+            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox7
             // 
@@ -216,6 +220,7 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(97, 20);
             this.textBox7.TabIndex = 8;
+            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox1
             // 
@@ -223,6 +228,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(97, 20);
             this.textBox1.TabIndex = 7;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label14
             // 

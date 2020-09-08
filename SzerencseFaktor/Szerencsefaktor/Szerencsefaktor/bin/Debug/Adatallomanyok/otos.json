@@ -8,5 +8,9 @@
   "WhereWhat": "archiv.csv",
   "ConstantValueOfVibrationY": 0.05556,
   "VibrationYConstantDivisibleBy": 5,
-  "VibrationYConstantDivisor":90
+  "VibrationYConstantDivisor":90,
+  "PlayableIndexFilePath" : "",
+  "HitIndexFilePath" : "",
+  "PlayableIndexFilePath" : "/Adatallomanyok/otosmegjatszhatoindex.csv",
+  "HitIndexFilePath" : "/Adatallomanyok/otostalalatiindex.csv"
 }

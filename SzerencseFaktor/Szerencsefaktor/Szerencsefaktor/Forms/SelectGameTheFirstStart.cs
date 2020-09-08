@@ -22,6 +22,7 @@ namespace Szerencsefaktor.Forms
         public SelectGameTheFirstStart()
         {
             InitializeComponent();
+            this.Text = Directory.GetCurrentDirectory();
             dataDirectory = "./Adatallomanyok/";
             groupBox2.Enabled = false;
             
@@ -82,12 +83,12 @@ namespace Szerencsefaktor.Forms
             textBox2.Text = game.HomePage;
             textBox3.Text = game.FromWhat;
             textBox4.Text = game.WhereWhat;
-            //textBox5.Text = ;
-            //textBox6.Text = ;
+            textBox5.Text = game.PlayableIndexFilePath;
+            textBox6.Text = game.HitIndexFilePath;
             textBox1.Text = game.SmallestNumber.ToString();
             textBox7.Text = game.LargestNumber.ToString();
             textBox8.Text = game.HowManyCanIPlay.ToString();
-            textBox9.Text = game.ConstantValueOfVibrationY.ToString(); //osztandó
+            textBox9.Text = game.VibrationYConstantDivisibleBy.ToString(); //osztandó
             textBox10.Text = game.VibrationYConstantDivisor.ToString(); //osztó
             textBox11.Text = game.ConstantValueOfVibrationY.ToString();            
         }
