@@ -1,0 +1,16 @@
+{
+  "GameName": "keno",
+  "SmallestNumber": 1,
+  "LargestNumber": 80,
+  "HowManyCanIPlay": 10,
+  "HomePage": "https://bet.szerencsejatek.hu/jatekok/keno",
+  "FromWhat": "https://bet.szerencsejatek.hu/cmsfiles/keno.csv",
+  "WhereWhat": "archiv.csv",
+  "ConstantValueOfVibrationY": 0.0875,
+  "vibrationYConstantDivisibleBy": 7,
+  "vibrationYConstantDivisor": 80,
+  "PlayableIndexFilePath" : "",
+  "HitIndexFilePath" : "",
+ "PlayableIndexFilePath" : "/Adatallomanyok/kenomegjatszhatoindex.csv",
+  "HitIndexFilePath" : "/Adatallomanyok/kenotalalatiindex.csv"
+}

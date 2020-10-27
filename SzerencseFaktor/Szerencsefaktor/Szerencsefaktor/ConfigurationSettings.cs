@@ -6,6 +6,7 @@ using System.Linq;
 using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
+using Szerencsefaktor.FajlKezeles;
 using Szerencsefaktor.Other_classes;
 
 namespace Szerencsefaktor
@@ -20,11 +21,12 @@ namespace Szerencsefaktor
         private int vibrationTrendLength;
         private string theNameOfTheSavedDataFile;
         private List<string> indicatorNames;
+        private int nMinusNLength;
         #endregion
 
         #region properties        
         //basic settings
-        public string GameName { get => gameName; private set => gameName = value; }
+        public string GameName { get => gameName; set => gameName = value; }
         public List<string> DrawingTablesNames { get => drawingTablesNames; set => drawingTablesNames = value; }
         public List<string> DerivedTablesNames { get => derivedTablesNames; set => derivedTablesNames = value; }
         public int VibrationTrendLength 
@@ -59,7 +61,22 @@ namespace Szerencsefaktor
                 
             }
         }
-        public List<string> IndicatorNames { get => indicatorNames; set => indicatorNames = value; }             
+        public List<string> IndicatorNames { get => indicatorNames; set => indicatorNames = value; }     
+        public int NMinusNLength 
+        {
+            get => nMinusNLength;
+            set 
+            {
+                if (value != 0)
+                {
+                    nMinusNLength = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Az 'N minusz N' értéke nem lehet nulla! ");
+                }
+            }
+        }
         #endregion
 
         public ConfigurationSettings()
@@ -76,7 +93,7 @@ namespace Szerencsefaktor
 
         public virtual void ReadFromJsonFile(string fromJson)
         {
-            ConfigurationSettings conf = JsonConvert.DeserializeObject<ConfigurationSettings>(fromJson);                                          
+            ConfigurationSettings conf = JsonConvert.DeserializeObject<ConfigurationSettings>( JsonFileManagement.ReadStringFromJsonFile("./Adatallomanyok/" + fromJson));                                                    
             drawingTablesNames = conf.drawingTablesNames;
             derivedTablesNames = conf.derivedTablesNames;
             vibrationTrendLength = conf.vibrationTrendLength;

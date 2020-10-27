@@ -22,7 +22,7 @@ namespace Szerencsefaktor.Forms
         ConfigurationSettings ConfSett;
         GameFeatures Game;
         ReferenciaNumber RefNum;
-        ConfigurationSettings Conf;
+        //ConfigurationSettings Conf;
         TrixSettings Trix;
         EmasSettings EmaS;
         RsiSettings RsiS;
@@ -42,7 +42,7 @@ namespace Szerencsefaktor.Forms
 
             #region This is section loading the game features
             Game = new GameFeatures();
-            Game.ConvertJsonStringToJsonFormat(JsonFileManagement.ReadStringFromJsonFile(Conf.GameName + ".json"));
+            Game.ConvertJsonStringToJsonFormat(JsonFileManagement.ReadStringFromJsonFile(ConfSett.GameName + ".json"));  //(Conf.GameName + ".json"));
             #endregion
 
             #region This is section loading the reference number from json file

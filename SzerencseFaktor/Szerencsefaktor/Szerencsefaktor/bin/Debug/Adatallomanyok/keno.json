@@ -6,11 +6,22 @@
   "HomePage": "https://bet.szerencsejatek.hu/jatekok/keno",
   "FromWhat": "https://bet.szerencsejatek.hu/cmsfiles/keno.csv",
   "WhereWhat": "archiv.csv",
-  "ConstantValueOfVibrationY": 0.0875,
-  "vibrationYConstantDivisibleBy": 7,
+  "ConstantValueOfVibrationY": 0.125,
+  "vibrationYConstantDivisibleBy": 10,
   "vibrationYConstantDivisor": 80,
   "PlayableIndexFilePath" : "",
   "HitIndexFilePath" : "",
  "PlayableIndexFilePath" : "/Adatallomanyok/kenomegjatszhatoindex.csv",
-  "HitIndexFilePath" : "/Adatallomanyok/kenotalalatiindex.csv"
+  "HitIndexFilePath" : "/Adatallomanyok/kenotalalatiindex.csv",
+  "SqlSeparator" : ",",
+  "TableDatas" : 
+  {
+	"huzasokIdeje" : "ev INT NOT NULL,het TINYINT NOT NULL,nap TINYINT NOT NULL,huzasDatuma DATE",	
+	"huzottSzamok" : "sz1 TINYINT,sz2 TINYINT,sz3 TINYINT,sz4 TINYINT,sz5 TINYINT,sz6 TINYINT,sz7 TINYINT,sz8 TINYINT,sz9 TINYINT,sz10 TINYINT,sz11 TINYINT,sz12 TINYINT,sz13 TINYINT,sz14 TINYINT,sz15 TINYINT,sz16 TINYINT",sz17 TINYINT,sz18 TINYINT,sz19 TINYINT,sz20 TINYINT"
+  },
+  "TableIndex" : 
+  {
+	"megjatszottIndex" : "indexSzam VARCHAR(3) NOT NULL, fixSzamokDb TINYINT, kombSzamokDb TINYINT, alapJatekokDb INT NOT NULL",
+	"talalatiIndex" : "indexSzam VARCHAR(3) NOT NULL, fixSzamokDb TINYINT, kombSzamokDb TINYINT, talalat7Db INT, talalat6Db INT, talalat5Db INT, talalat4Db INT"
+  }
 }

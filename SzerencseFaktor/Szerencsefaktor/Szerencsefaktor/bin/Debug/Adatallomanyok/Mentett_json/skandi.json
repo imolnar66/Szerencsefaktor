@@ -1,0 +1,16 @@
+{
+  "GameName": "skandinavlotto",
+  "SmallestNumber": 1,
+  "LargestNumber": 35,
+  "HowManyCanIPlay": 7,
+  "HomePage": "https://bet.szerencsejatek.hu/jatekok/skandinavlotto",
+  "FromWhat": "https://bet.szerencsejatek.hu/cmsfiles/skandi.csv",
+  "WhereWhat": "archiv.csv",
+  "ConstantValueOfVibrationY": 0.2,
+  "vibrationYConstantDivisibleBy": 7,
+  "vibrationYConstantDivisor": 35,
+  "PlayableIndexFilePath" : "",
+  "HitIndexFilePath" : "",
+  "PlayableIndexFilePath" : "/Adatallomanyok/skandimegjatszhatoindex.csv",
+  "HitIndexFilePath" : "/Adatallomanyok/skanditalalatiindex.csv"
+}

@@ -82,6 +82,7 @@
     <Compile Include="ForDatabase\AbException.cs" />
     <Compile Include="ForDatabase\AbKezeloMSSQL.cs" />
     <Compile Include="ForDatabase\CreateDataTables.cs" />
+    <Compile Include="ForDatabase\CreateDataTablesfromJson.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -12,5 +12,17 @@
   "PlayableIndexFilePath" : "",
   "HitIndexFilePath" : "",
   "PlayableIndexFilePath" : "/Adatallomanyok/skandimegjatszhatoindex.csv",
-  "HitIndexFilePath" : "/Adatallomanyok/skanditalalatiindex.csv"
+  "HitIndexFilePath" : "/Adatallomanyok/skanditalalatiindex.csv",
+  "SqlSeparator" : ",",
+  "TableDatas" : 
+  {
+	"huzasokIdeje" : "ev INT NOT NULL,het TINYINT NOT NULL,huzasDatuma DATE",
+	"nyeremenyek" : "tal7db INT,tal7ft FLOAT,tal6db INT,tal6ft FLOAT,tal5db INT,tal5ft FLOAT,tal4db INT,tal4ft FLOAT",
+	"huzottSzamok" : "sz1 TINYINT,sz2 TINYINT,sz3 TINYINT,sz4 TINYINT,sz5 TINYINT,sz6 TINYINT,sz7 TINYINT"
+  },
+  "TableIndex" : 
+  {
+	"megjatszottIndex" : "indexSzam VARCHAR(3) NOT NULL, fixSzamokDb TINYINT, kombSzamokDb TINYINT, alapJatekokDb INT NOT NULL",
+	"talalatiIndex" : "indexSzam VARCHAR(3) NOT NULL, fixSzamokDb TINYINT, kombSzamokDb TINYINT, talalat7Db INT, talalat6Db INT, talalat5Db INT, talalat4Db INT"
+  }
 }

@@ -10,5 +10,17 @@
   "VibrationYConstantDivisibleBy": 6,
   "VibrationYConstantDivisor": 45,
   "PlayableIndexFilePath" : "/Adatallomanyok/hatosmegjatszhatoindex.csv",
-  "HitIndexFilePath" : "/Adatallomanyok/hatostalalatiindex.csv"
+  "HitIndexFilePath" : "/Adatallomanyok/hatostalalatiindex.csv",
+  "SqlSeparator" : ",",
+  "TableDatas" : 
+  {
+	"huzasokIdeje" : "ev INT NOT NULL,het TINYINT NOT NULL,huzasDatuma DATE",
+	"nyeremenyek" : "tal6db INT,tal6ft FLOAT,tal5db INT,tal5ft FLOAT,tal4db INT,tal4ft FLOAT,tal3db INT,tal3ft FLOAT",
+	"huzottSzamok" : "sz1 TINYINT,sz2 TINYINT,sz3 TINYINT,sz4 TINYINT,sz5 TINYINT,sz6 TINYINT"
+  },
+  "TableIndex" : 
+  {
+	"megjatszottIndex" : "indexSzam VARCHAR(3) NOT NULL, fixSzamokDb TINYINT, kombSzamokDb TINYINT, alapJatekokDb INT NOT NULL",
+	"talalatiIndex" : "indexSzam VARCHAR(3) NOT NULL, fixSzamokDb TINYINT, kombSzamokDb TINYINT, talalat6Db INT, talalat5Db INT, talalat4Db INT, talalat3Db INT"
+  }
 }

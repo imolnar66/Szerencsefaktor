@@ -188,7 +188,12 @@ namespace Szerencsefaktor.Other_classes
         private int vibrationYConstantDivisor;
         private string playableIndexFilePath;
         private string hitIndexFilePath;
-
+        private string sqlSeparator;
+        private Dictionary<string, string> tableDatas;
+        //private List<string> tableNames;
+        //private List<string> huzasokIdeje;
+        //private List<string> nyeremenyek;
+        private List<string> huzottszamok;
         public string GameName { get => gameName; set => gameName = value; }
         public int SmallestNumber { get => smallestNumber; set => smallestNumber = value; }
         public int LargestNumber { get => largestNumber; set => largestNumber = value; }
@@ -201,6 +206,12 @@ namespace Szerencsefaktor.Other_classes
         public int VibrationYConstantDivisor { get => vibrationYConstantDivisor; set => vibrationYConstantDivisor = value; }
         public string PlayableIndexFilePath { get => playableIndexFilePath; set => playableIndexFilePath = value; }
         public string HitIndexFilePath { get => hitIndexFilePath; set => hitIndexFilePath = value; }
+        //public List<string> TableNames { get => tableNames; set => tableNames = value; }
+        //public List<string> HuzasokIdeje { get => huzasokIdeje; set => huzasokIdeje = value; }
+        //public List<string> Nyeremenyek { get => nyeremenyek; set => nyeremenyek = value; }
+        public List<string> Huzottszamok { get => huzottszamok; set => huzottszamok = value; }
+        public Dictionary<string, string> TableDatas { get => tableDatas; set => tableDatas = value; }
+        public string SqlSeparator { get => sqlSeparator; set => sqlSeparator = value; }
         public virtual void ConvertJsonStringToJsonFormat(string fromJson)
         {
             GameFeatures conf = JsonConvert.DeserializeObject<GameFeatures>(fromJson);
@@ -214,6 +225,10 @@ namespace Szerencsefaktor.Other_classes
             ConstantValueOfVibrationY = conf.ConstantValueOfVibrationY;
             VibrationYConstantDivisibleBy = conf.VibrationYConstantDivisibleBy;
             VibrationYConstantDivisor = conf.VibrationYConstantDivisor;
+            //TableNames = conf.TableNames;
+            //HuzasokIdeje = conf.huzasokIdeje;
+            //Nyeremenyek = conf.nyeremenyek;
+            Huzottszamok = conf.huzottszamok;
         }
         public virtual string SaveStringFormatToJson(GameFeatures game)
         {

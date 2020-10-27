@@ -1,0 +1,16 @@
+{
+  "GameName": "otoslotto",
+  "SmallestNumber": 1,
+  "LargestNumber": 90,
+  "HowManyCanIPlay": 5,
+  "HomePage": "https://bet.szerencsejatek.hu/jatekok/otoslotto",
+  "FromWhat": "https://bet.szerencsejatek.hu/cmsfiles/otos.csv",
+  "WhereWhat": "archiv.csv",
+  "ConstantValueOfVibrationY": 0.05556,
+  "VibrationYConstantDivisibleBy": 5,
+  "VibrationYConstantDivisor":90,
+  "PlayableIndexFilePath" : "",
+  "HitIndexFilePath" : "",
+  "PlayableIndexFilePath" : "/Adatallomanyok/otosmegjatszhatoindex.csv",
+  "HitIndexFilePath" : "/Adatallomanyok/otostalalatiindex.csv"
+}

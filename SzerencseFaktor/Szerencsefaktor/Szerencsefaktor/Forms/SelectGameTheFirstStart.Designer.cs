@@ -80,6 +80,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Enabled = false;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(110, 27);
             this.comboBox1.Name = "comboBox1";
@@ -392,6 +393,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Adatok mentése";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -420,6 +422,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "SelectGameTheFirstStart";
             this.Text = "SelectGameTheFirstStart";
+            this.Load += new System.EventHandler(this.SelectGameTheFirstStart_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

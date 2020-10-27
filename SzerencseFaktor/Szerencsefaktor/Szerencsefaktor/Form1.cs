@@ -31,10 +31,10 @@ namespace Szerencsefaktor
         private void Form1_Load(object sender, EventArgs e)
         {
             #region adattáblák ellenőrzése
-
-            if (!AbKezeloMSSQL.DoesTheTableExist("huzasokIdeje") && !AbKezeloMSSQL.DoesTheTableExist("szadatok")) //egyik sem létezik
+                     
+            if (!AbKezeloMSSQL.IfDoesTheTableExist("huzasokideje") && !AbKezeloMSSQL.IfDoesTheTableExist("szadatok")) //egyik sem létezik
             {
-                if (KiIrBoxba.MitIrjonKi("Sem az alap, sem a származtatott adattáblák nem léteznek!\nLétrehozzam azokat? ", Uzenetek.kérdés) == DialogResult.Yes)
+                if (KiIrBoxba.MitIrjonKi("Nincs kiválasztott játék !\nAdattáblák nem léteznek!\nVálaszt egy játékot? ", Uzenetek.kérdés) == DialogResult.Yes)
                 {
                     SelectGameTheFirstStart FirstStart = new SelectGameTheFirstStart();
                     if (FirstStart.ShowDialog() == DialogResult.OK)
@@ -42,7 +42,7 @@ namespace Szerencsefaktor
                         //folytatás
                     }
                 }
-                else if (AbKezeloMSSQL.DoesTheTableExist("huzasokideje") && !AbKezeloMSSQL.DoesTheTableExist("szadatok")) //csak a származtatott nem létezik
+                else if (AbKezeloMSSQL.IfDoesTheTableExist("huzasokideje") && !AbKezeloMSSQL.IfDoesTheTableExist("szadatok")) //csak a származtatott nem létezik
                 {
                     if (KiIrBoxba.MitIrjonKi("Az alap adattáblák léteznek!\nA származtatott adattáblák nem léteznek!\nLétrehozzam azokat?", Uzenetek.kérdés) == DialogResult.Yes)
                     {
@@ -65,6 +65,11 @@ namespace Szerencsefaktor
             }
             #endregion
 
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            AbKezeloMSSQL.DisconnectTheDatabase();
         }
     }
 }

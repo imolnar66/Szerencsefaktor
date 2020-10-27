@@ -26,7 +26,7 @@ namespace Szerencsefaktor.ForDatabase
             }
 
         }
-        public static void DisconnectFromDatabase()
+        public static void DisconnectTheDatabase()
         {
             try
             {
@@ -38,7 +38,7 @@ namespace Szerencsefaktor.ForDatabase
                 throw new AbException("A kapcsolat bontása sikertelen!", ex);
             }
         }
-        public static bool DoesTheTableExist(string tablaNeve)
+        public static bool IfDoesTheTableExist(string tablaNeve)
         {
             string strCheckTable = string.Format("IF OBJECT_ID('{0}', 'U') IS NOT NULL SELECT 'true' ELSE SELECT 'false'", tablaNeve);
             SqlCommand command = new SqlCommand(strCheckTable, connection);
@@ -51,7 +51,7 @@ namespace Szerencsefaktor.ForDatabase
             int response = 0;
             try
             {
-                if (!AbKezeloMSSQL.DoesTheTableExist(tableCodeString[2]))
+                if (!AbKezeloMSSQL.IfDoesTheTableExist(tableCodeString[2]))
                 {
                     command = new SqlCommand(tableCode, connection);
                     response = command.ExecuteNonQuery();
@@ -219,6 +219,29 @@ namespace Szerencsefaktor.ForDatabase
                 throw new AbException("A Kenó 'nyeroOsztalybaEsoNyertesSzammezokSzama' tábla feltöltése nem sikerült!", ex); ;
             }
         }
+        #region delete methods
+        public static void DropDataTableFromDatabase(string tableName)
+        {
+            command = new SqlCommand($"DROP TABLE {tableName}", connection);
+            command.ExecuteNonQuery();
+        }
+        public static int DeleteDatasFromTable(string tableName)
+        {
+            if (!tableName.Contains("index"))   //The index table does not contains "id" fields
+            {
+                int db = 0;
+                string sql = $"DELETE FROM [{tableName}] WHERE id > 0";
+                command = new SqlCommand(sql, connection);
+                db = command.ExecuteNonQuery();
+                return db;
+            }
+            else
+            {
+                return -1;
+            }
+
+        }
+        #endregion
 
     }
 }

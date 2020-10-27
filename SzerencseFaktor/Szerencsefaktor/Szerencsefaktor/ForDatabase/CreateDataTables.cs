@@ -17,6 +17,7 @@ namespace Szerencsefaktor.ForDatabase
         private byte maxNumber;
         List<string> derivedTableNames;
         List<string> derivedTableNamesString;
+        List<string> allTableStrings;
         private string drawTimeTableString;     //húzásokideje tábla string
         private string prizeTableString;        //nyereménytábla string;
         private string drawNumbersTableString;  //húzott számok táblas tring
@@ -39,23 +40,24 @@ namespace Szerencsefaktor.ForDatabase
         internal KindOfGame Game { get => game; set => game = value; }
         internal SkandiDraws Draws { get => draws; set => draws = value; }
         public string TableString { get => tableString; private set => tableString = value; }
-        public string DrawTimeTableString { get => drawTimeTableString; private set => drawTimeTableString = value; }
-        public string PrizeTableString { get => prizeTableString; private set => prizeTableString = value; }
-        public string DrawNumbersTableString { get => drawNumbersTableString; private set => drawNumbersTableString = value; }
-        public int NumberFrom { get => numberFrom; private set => numberFrom = value; }
-        public int NumberTo { get => numberTo; private set => numberTo = value; }
-        public int NumberPiece { get => numberPiece; private set => numberPiece = value; }
-        public string GameName { get => gameName; private set => gameName = value; }
-        public string KenoMegjatszottIndexTablaString { get => kenoMegjatszottIndexTablaString; private set => kenoMegjatszottIndexTablaString = value; }
-        public string KenoNyeremenySzorzoTablaString { get => kenoNyeremenySzorzoTablaString; private set => kenoNyeremenySzorzoTablaString = value; }
-        public string KenoNyertesMezoSzorzoTablaString { get => kenoNyertesMezoSzorzoTablaString; private set => kenoNyertesMezoSzorzoTablaString = value; }
-        public string KenoNyeroOsztalyokbaEsoNyertesSzammezokSzamaTablaString { get => kenoNyeroOsztalyokbaEsoNyertesSzammezokSzamaTablaString; private set => kenoNyeroOsztalyokbaEsoNyertesSzammezokSzamaTablaString = value; }
-        public string BaseIndexMegjatszottIndexTableString { get => baseIndexMegjatszottIndexTableString; private set => baseIndexMegjatszottIndexTableString = value; }
-        public string BaseIndexTalalatiTablaString { get => baseIndexTalalatiTablaString; private set => baseIndexTalalatiTablaString = value; }
-        public string SzadatokTablaString { get => szadatokTablaString; private set => szadatokTablaString = value; }
-        public byte MaxNumber { get => maxNumber; private set => maxNumber = value; }
+        //public string DrawTimeTableString { get => drawTimeTableString; private set => drawTimeTableString = value; }
+        //public string PrizeTableString { get => prizeTableString; private set => prizeTableString = value; }
+        //public string DrawNumbersTableString { get => drawNumbersTableString; private set => drawNumbersTableString = value; }
+        //public int NumberFrom { get => numberFrom; private set => numberFrom = value; }
+        //public int NumberTo { get => numberTo; private set => numberTo = value; }
+        //public int NumberPiece { get => numberPiece; private set => numberPiece = value; }
+        //public string GameName { get => gameName; private set => gameName = value; }
+        //public string KenoMegjatszottIndexTablaString { get => kenoMegjatszottIndexTablaString; private set => kenoMegjatszottIndexTablaString = value; }
+        //public string KenoNyeremenySzorzoTablaString { get => kenoNyeremenySzorzoTablaString; private set => kenoNyeremenySzorzoTablaString = value; }
+        //public string KenoNyertesMezoSzorzoTablaString { get => kenoNyertesMezoSzorzoTablaString; private set => kenoNyertesMezoSzorzoTablaString = value; }
+        //public string KenoNyeroOsztalyokbaEsoNyertesSzammezokSzamaTablaString { get => kenoNyeroOsztalyokbaEsoNyertesSzammezokSzamaTablaString; private set => kenoNyeroOsztalyokbaEsoNyertesSzammezokSzamaTablaString = value; }
+        //public string BaseIndexMegjatszottIndexTableString { get => baseIndexMegjatszottIndexTableString; private set => baseIndexMegjatszottIndexTableString = value; }
+        //public string BaseIndexTalalatiTablaString { get => baseIndexTalalatiTablaString; private set => baseIndexTalalatiTablaString = value; }
+        //public string SzadatokTablaString { get => szadatokTablaString; private set => szadatokTablaString = value; }
+        //public byte MaxNumber { get => maxNumber; private set => maxNumber = value; }
         public List<string> DerivedTableNames { get => derivedTableNames; set => derivedTableNames = value; }
         public List<string> DerivedTableNamesString { get => derivedTableNamesString; set => derivedTableNamesString = value; }
+        public List<string> AllTableStrings { get => allTableStrings; set => allTableStrings = value; }
 
         public CreatingDatatables(KindOfGame game, SkandiDraws draws = SkandiDraws.MachineDraws)
         {
@@ -65,7 +67,7 @@ namespace Szerencsefaktor.ForDatabase
             prizeTableString = "";
             drawNumbersTableString = "";
             derivedTableNamesString = new List<string>();
-
+            allTableStrings = new List<string>();
 
             switch (Game)
             {
@@ -98,11 +100,11 @@ namespace Szerencsefaktor.ForDatabase
             }
         }
 
-        public void BaseTableCodeGeneration()
+        public void BaseTablesStringGeneration()
         {
 
             //string secondString = "tablaName"            
-            string lastString = ", CONSTRAINT HuzasokIdeje_Nyeremenyek_FK FOREIGN KEY (id) REFERENCES huzasokideje(id))";
+            string lastString = ", FOREIGN KEY (id) REFERENCES huzasokideje(id))";
 
             //húzások ideje tábla szerkezetének létrehozása
             drawTimeTableString = createTable + "huzasokideje (" + idCreate + ", ev INT NOT NULL, het TINYINT NOT NULL ";
@@ -111,6 +113,7 @@ namespace Szerencsefaktor.ForDatabase
                 drawTimeTableString += ", huzasnapja TINYINT NOT NULL";
             }
             drawTimeTableString += ", huzasdatuma DATE NOT NULL)";
+            allTableStrings.Add(drawTimeTableString);
 
             //nyereménytábla létrehozása
             //Kenóban nincs nyereménytábla
@@ -122,6 +125,7 @@ namespace Szerencsefaktor.ForDatabase
                     prizeTableString += ", talalt" + (i).ToString() + "db INT, talalat" + (i).ToString() + "Ft FLOAT";
                 }
                 prizeTableString += lastString;
+                allTableStrings.Add(prizeTableString);
             }
 
             //húzott számok tábla létrehozása
@@ -131,6 +135,7 @@ namespace Szerencsefaktor.ForDatabase
                 drawNumbersTableString += ", szam" + (i).ToString() + " TINYINT";
             }
             drawNumbersTableString += lastString;
+            allTableStrings.Add(drawNumbersTableString);
 
             //szadatok tábla létrehozása
             string numbers = "";
@@ -143,34 +148,39 @@ namespace Szerencsefaktor.ForDatabase
                 }
             }
 
-            SzadatokTablaString = createTable + "szadatok (" +
+            szadatokTablaString = createTable + "szadatok (" +
                 idCreate + ", " +
                 numbers + ")";
+            allTableStrings.Add(szadatokTablaString);
         }
-        public void DerivedDataTablesGeneration() //származtatott adattáblák
+        public void DerivedDataTablesStringGeneration() //származtatott adattáblák
         {
+            //A táblakódot csak egyszer kellene létrehozni, mert minden táblában megegyezik.
+           
 
             foreach (string item in derivedTableNames)
             {
                 string oneTableString = "";
-                oneTableString += createTable + " " + item + "(" + idCreate;
+                oneTableString += createTable  + item + "(" + idCreate;
                 for (int i = 1; i <= maxNumber; i++)
                 {
-                    oneTableString += ", szam" + i.ToString() + " FLOAT,";
+                    oneTableString += ", szam" + i.ToString() + " FLOAT";
                 }
-                oneTableString += ", CONSTRAINT FOREIGN KEY (id) REFERENCES szadatok(id))";
-                DerivedTableNamesString.Add(oneTableString);
+                oneTableString += ", FOREIGN KEY (id) REFERENCES szadatok(id))";
+                //DerivedTableNamesString.Add(oneTableString);
+                allTableStrings.Add(oneTableString);
             }
         }
-        public void BaseIndexTableStringGeneration()
+        public void BaseIndexTablesStringGeneration()
         {
             string fromToNumber = "";
-            BaseIndexMegjatszottIndexTableString = createTable + "megjatszottIndex ( " +
+            baseIndexMegjatszottIndexTableString = createTable + "megjatszottIndex ( " +
                 "indexSzam VARCHAR(3) NOT NULL, " +
                 "fixSzamokDb TINYINT, " +
                 "kombSzamokDb TINYINT, " +
                 "alapJatekokDb INT NOT NULL)";
 
+            allTableStrings.Add(baseIndexMegjatszottIndexTableString);
             for (int i = numberFrom; i >= numberTo; i--)
             {
                 fromToNumber += "talalat" + i.ToString() + "Db INT";
@@ -183,18 +193,19 @@ namespace Szerencsefaktor.ForDatabase
                     fromToNumber += ")";
                 }
             }
-            BaseIndexTalalatiTablaString = createTable + tableString + "talalatiIndex (" +
+            baseIndexTalalatiTablaString = createTable + tableString + "talalatiIndex (" +
                 "indexSzam VARCHAR(3) NOT NULL, " +
                 "fixSzamok TINYINT, " +
                 "kombSzamok TINYINT, " +
-                fromToNumber + ")";
+                fromToNumber;// + ")";
+            allTableStrings.Add(baseIndexTalalatiTablaString);
         }
-        public void KenoIndexTableGeneration()
+        public void KenoIndexTablesStringGeneration()
         {
             //megjatszottIndex 
             //indexSzam pk, jetekTipus, jelolesekSzama, szammezokSzama, alapjatekokSzama ha a tet 1* 2* 3* 4* 5*
             //indexSzam, jetekTipus, jelolesekSzama, szammezokSzama, alapJetekDb1xTet, alapjatekDb2xTet, stb
-            KenoMegjatszottIndexTablaString = createTable + "megjatszottIndex (" +
+            kenoMegjatszottIndexTablaString = createTable + "megjatszottIndex (" +
                 "indexSzam INT NOT NULL, " +
                 "jetekTipus VARCHAR(2), " +
                 "jelolesekSzama TINYINT NOT NULL, " +
@@ -204,10 +215,12 @@ namespace Szerencsefaktor.ForDatabase
                 "alapjatekDbHaSzorzo3 INT NOT NULL, " +
                 "alapjatekDbHaSzorzo4 INT NOT NULL, " +
                 "alapjatekDbHaSzorzo5 INT NOT NULL)";
+            allTableStrings.Add(kenoMegjatszottIndexTablaString);
+
             //talaltiIndex
             //indexSzam, jeleolesekSzama, szammezokSzama, talalatokSzama, 
 
-            KenoNyeremenySzorzoTablaString = createTable + "nyeremenySzorzo (" +
+            kenoNyeremenySzorzoTablaString = createTable + "nyeremenySzorzo (" +
                 idCreate + ", " +
                 "indexSzam INT NOT NULL, " +
                 "talaltokSzama TINYINT NOT NULL, " +
@@ -217,9 +230,10 @@ namespace Szerencsefaktor.ForDatabase
                 "nyeremenySzorzoHa4xTet INT NOT NULL, " +
                 "nyeremenySzorzoHa5xTet INT NOT NULL, " +
                 "CONSTRAINT FOREIGN KEY(indexSzam) REFERENCES megjatszottIndex(indexSzam))";
+            allTableStrings.Add(kenoNyeremenySzorzoTablaString);
             /*
              */
-            KenoNyertesMezoSzorzoTablaString = createTable + "nyertesMezoSzorzo (" +
+            kenoNyertesMezoSzorzoTablaString = createTable + "nyertesMezoSzorzo (" +
                 idCreate + ", " +
                 "jatekTipus VARCHAR(2), " +
                 "nyertesMezoSzorzo10 VARCHAR(10), " +
@@ -232,8 +246,9 @@ namespace Szerencsefaktor.ForDatabase
                 "nyertesMezoSzorzo03 VARCHAR(10), " +
                 "nyertesMezoSzorzo02 VARCHAR(10), " +
                 "nyertesMezoSzorzo01 VARCHAR(10))";
+            allTableStrings.Add(kenoNyertesMezoSzorzoTablaString);
 
-            KenoNyeroOsztalyokbaEsoNyertesSzammezokSzamaTablaString = createTable + "nyeroOsztalybaEsoNyertesSzammezokSzama (" +
+            kenoNyeroOsztalyokbaEsoNyertesSzammezokSzamaTablaString = createTable + "nyeroOsztalybaEsoNyertesSzammezokSzama (" +
                 idCreate + ", " +
                 "indexSzam INT NOT NULL, " +
                 "jatekTipus VARCHAR(2), " +
@@ -249,6 +264,7 @@ namespace Szerencsefaktor.ForDatabase
                 "nyertesSzammezokSzama02 INT, " +
                 "nyertesSzammezokSzama01 INT, " +
                 "nyertesSzammezokSzama00 INT) ";
+            allTableStrings.Add(kenoNyeroOsztalyokbaEsoNyertesSzammezokSzamaTablaString);
         }
     }
 }
